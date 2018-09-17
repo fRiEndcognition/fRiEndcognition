@@ -1,0 +1,14 @@
+C:\Coding\fRiEndcognition\WindowsFormsApp1\bin\Debug\friendcognition.exe.config
+C:\Coding\fRiEndcognition\WindowsFormsApp1\bin\Debug\friendcognition.exe
+C:\Coding\fRiEndcognition\WindowsFormsApp1\bin\Debug\friendcognition.pdb
+C:\Coding\fRiEndcognition\WindowsFormsApp1\bin\Debug\FaceSDK.NET.dll
+C:\Coding\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csprojAssemblyReference.cache
+C:\Coding\fRiEndcognition\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AppForm.resources
+C:\Coding\fRiEndcognition\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.OpenForm.resources
+C:\Coding\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.Properties.Resources.resources
+C:\Coding\fRiEndcognition\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.RegisterForm.resources
+C:\Coding\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csproj.GenerateResource.cache
+C:\Coding\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csproj.CoreCompileInputs.cache
+C:\Coding\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csproj.CopyComplete
+C:\Coding\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.exe
+C:\Coding\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.pdb
