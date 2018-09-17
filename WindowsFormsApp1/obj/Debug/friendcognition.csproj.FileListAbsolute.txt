@@ -1,7 +1,6 @@
 C:\Users\eglyt\Desktop\fRiEndcognition\WindowsFormsApp1\bin\Debug\friendcognition.exe.config
 C:\Users\eglyt\Desktop\fRiEndcognition\WindowsFormsApp1\bin\Debug\friendcognition.exe
 C:\Users\eglyt\Desktop\fRiEndcognition\WindowsFormsApp1\bin\Debug\friendcognition.pdb
-C:\Users\eglyt\Desktop\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csprojAssemblyReference.cache
 C:\Users\eglyt\Desktop\fRiEndcognition\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AppForm.resources
 C:\Users\eglyt\Desktop\fRiEndcognition\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.OpenForm.resources
 C:\Users\eglyt\Desktop\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.Properties.Resources.resources
@@ -10,3 +9,4 @@ C:\Users\eglyt\Desktop\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognitio
 C:\Users\eglyt\Desktop\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csproj.CoreCompileInputs.cache
 C:\Users\eglyt\Desktop\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.exe
 C:\Users\eglyt\Desktop\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.pdb
+C:\Users\eglyt\Desktop\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csprojAssemblyReference.cache
