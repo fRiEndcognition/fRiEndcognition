@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
 
             InitializeComponent();
             this.CenterToScreen();
+            this.FormClosed += new FormClosedEventHandler(closingThisForm);
 
         }
 
@@ -57,6 +58,7 @@ namespace WindowsFormsApp1
 
         }
 
+        /*
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -81,8 +83,9 @@ namespace WindowsFormsApp1
         {
 
         }
+        */
 
-        private void button1_Click_2(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             if (button1.Text == "START")
             {
@@ -119,6 +122,12 @@ namespace WindowsFormsApp1
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        void closingThisForm(object sender, FormClosedEventArgs e)
+        {
+            cameraWorking = false;
+            Application.Exit();
         }
 
     }
