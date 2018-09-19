@@ -47,7 +47,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(995, 49);
             this.button1.TabIndex = 0;
-            this.button1.Text = "SUBMIT";
+            this.button1.Text = "START";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
@@ -73,7 +73,7 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "OpenForm";
-            this.Text = "Form1";
+            this.Text = "fRiEndcognition";
             this.Load += new System.EventHandler(this.OpenForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
