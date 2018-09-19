@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
         {
 
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
             this.CenterToScreen();
             this.FormClosed += new FormClosedEventHandler(closingThisForm);
 
