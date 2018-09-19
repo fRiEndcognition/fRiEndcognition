@@ -16,11 +16,17 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.CenterToParent();
+            this.FormClosed += new FormClosedEventHandler(closingThisForm);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
+        void closingThisForm(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }
