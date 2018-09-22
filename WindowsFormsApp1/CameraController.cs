@@ -26,9 +26,9 @@ class CameraController
     {
         currentPictureBox = pictureBox;    
 
-        if (FSDK.FSDKE_OK != FSDK.ActivateLibrary("colDhMxd3noCHRGBUPPlRrUW2NPTos6UGG6O8WkiZxzqS7R6e1KhzsJztksKgl1iWdePMcg9ransUedZAX7LAKegwtXLVT7FLXWH5/suefXLR6Ujl/CH5Yf2Ur+E06hTR93X8ODBQdhjQH4RBZB1bCBalylvewvpusFjHQkgTZk="))
+        if (FSDK.FSDKE_OK != FSDK.ActivateLibrary(Constants.LICENCE_KEY))
         {
-            MessageBox.Show("Error activating FaceSDK - please enter license key", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Constants.ERROR_ACTIVATING_FACESDK, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Application.Exit();
         }
 
@@ -41,7 +41,7 @@ class CameraController
 
         if (cameraCount == 0)
         {
-            MessageBox.Show("No camera found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Constants.NO_CAMERA_ERROR, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Application.Exit();
         }
 
@@ -61,7 +61,7 @@ class CameraController
         int cameraHandle = 0;
         if (FSDKCam.OpenVideoCamera(ref cameraName, ref cameraHandle) != FSDK.FSDKE_OK)
         {
-            MessageBox.Show("Error opening the camera", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Constants.CAMERA_OPEN_ERROR, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             Application.Exit();
         }
 
