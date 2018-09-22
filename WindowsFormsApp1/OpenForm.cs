@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Luxand;
 
+
 namespace WindowsFormsApp1
 {
     public partial class OpenForm : Form
     {
-        String cameraName;
-        bool cameraWorking = true;
+        //String cameraName;
+        //bool cameraWorking = true;
 
         public OpenForm()
         {
@@ -28,6 +29,10 @@ namespace WindowsFormsApp1
 
         private void OpenForm_Load(object sender, EventArgs e)
         {
+            CameraController.Instance().InitializeCamera(pictureBox1);
+
+            
+            /*
             if (FSDK.FSDKE_OK != FSDK.ActivateLibrary("colDhMxd3noCHRGBUPPlRrUW2NPTos6UGG6O8WkiZxzqS7R6e1KhzsJztksKgl1iWdePMcg9ransUedZAX7LAKegwtXLVT7FLXWH5/suefXLR6Ujl/CH5Yf2Ur+E06hTR93X8ODBQdhjQH4RBZB1bCBalylvewvpusFjHQkgTZk="))
             {
                 MessageBox.Show("Error activating FaceSDK - please enter license key", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -56,7 +61,7 @@ namespace WindowsFormsApp1
             pictureBox1.Height = formatList[videoFormat].Height;
             this.Width = formatList[videoFormat].Width + 50;
             this.Height = formatList[videoFormat].Height + 100;
-
+            */
         }
 
         /*
@@ -91,6 +96,9 @@ namespace WindowsFormsApp1
             if (button1.Text == "START")
             {
                 button1.Text = "SUBMIT";
+
+                CameraController.Instance().StartStreaming();
+                /*
                 int cameraHandle = 0;
                 if (FSDKCam.OpenVideoCamera(ref cameraName, ref cameraHandle) != FSDK.FSDKE_OK)
                 {
@@ -110,6 +118,7 @@ namespace WindowsFormsApp1
 
                 FSDKCam.CloseVideoCamera(cameraHandle);
                 FSDKCam.FinalizeCapturing();
+                */
             }
             else
             {
@@ -127,7 +136,8 @@ namespace WindowsFormsApp1
 
         void closingThisForm(object sender, FormClosedEventArgs e)
         {
-            cameraWorking = false;
+
+            CameraController.Instance().StopStreaming();
             Application.Exit();
         }
 
