@@ -55,6 +55,8 @@
     <Compile Include="AppForm.Designer.cs">
       <DependentUpon>AppForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CameraController.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="OpenForm.cs">
       <SubType>Form</SubType>
     </Compile>
