@@ -93,9 +93,10 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (button1.Text == "START")
+            if (button1.Tag.Equals(Constants.START_BUTTON))
             {
                 button1.Text = "SUBMIT";
+                button1.Tag = Constants.SUBMIT_BUTTON;
 
                 CameraController.Instance().StartStreaming();
                 /*
