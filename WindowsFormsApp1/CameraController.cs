@@ -11,12 +11,10 @@ class CameraController
 {
 
     private static CameraController instance;
-
     private string cameraName;
-
     private PictureBox currentPictureBox;
-
     public bool cameraWorking = true;
+    private string trackerFile = "tracker.dat";
 
     private CameraController()
     {
@@ -52,9 +50,7 @@ class CameraController
         int videoFormat = 0;
         currentPictureBox.Width = formatList[videoFormat].Width;
         currentPictureBox.Height = formatList[videoFormat].Height;
-        //this.Width = formatList[videoFormat].Width + 50;
-        //this.Height = formatList[videoFormat].Height + 100;
-    }
+        }
 
     public void StartStreaming()
     {
@@ -65,6 +61,14 @@ class CameraController
             Application.Exit();
         }
 
+        int tracker = 0;
+        if(FSDK.LoadTrackerMemoryFromFile(ref tracker, trackerFile) != FSDK.FSDKE_OK)
+        {
+            FSDK.CreateTracker(ref tracker);
+        }
+        int err = 0;
+        FSDK.SetTrackerMultipleParameters(tracker, "HandleArbitraryRotations=false; DetermineFaceRotationAngle=false; InternalResizeWidth=300; FaceDetectionThreshold=5;", ref err);
+
         cameraWorking = true;
 
         while (cameraWorking)
@@ -74,8 +78,32 @@ class CameraController
             FSDKCam.GrabFrame(cameraHandle, ref imageHandle);
             FSDK.CImage image = new FSDK.CImage(imageHandle);
             Image frameImage = image.ToCLRImage();
+
+            long [] IDs;
+            long faceCount = 0;
+            FSDK.FeedFrame(tracker, 0, image.ImageHandle, ref faceCount, out IDs, sizeof(long)*256);
+            Array.Resize(ref IDs, (int)faceCount);
+
+            //Drawing rectangles
+            Graphics graphics = Graphics.FromImage(frameImage);
+
+            for(int i = 0; i < IDs.Length; ++i)
+            {
+                FSDK.TFacePosition facePosition = new FSDK.TFacePosition();
+                FSDK.GetTrackerFacePosition(tracker, 0, IDs[i], ref facePosition);
+
+                int x = facePosition.xc - (int)(facePosition.w * 0.5);
+                int y = facePosition.yc - (int)(facePosition.w * 0.5);
+                int w = (int)(facePosition.w * 1.2);
+                Pen pen = Pens.Red;
+                graphics.DrawRectangle(pen, x, y, w, w);
+            }
+
             currentPictureBox.Image = frameImage;
+            GC.Collect();
         }
+        FSDK.SaveTrackerMemoryToFile(tracker, trackerFile);
+        FSDK.FreeTracker(tracker);
 
         FSDKCam.CloseVideoCamera(cameraHandle);
         FSDKCam.FinalizeCapturing();
