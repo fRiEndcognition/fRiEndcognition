@@ -28,6 +28,10 @@ namespace WindowsFormsApp1
         private void OpenForm_Load(object sender, EventArgs e)
         {
             CameraController.Instance().InitializeCamera(pictureBox1);
+<<<<<<< HEAD
+
+=======
+>>>>>>> style_ui
         }
 
         private void button1_Click(object sender, EventArgs e)
