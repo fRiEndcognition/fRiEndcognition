@@ -25,6 +25,7 @@ namespace WindowsFormsApp1
 
         }
 
+
         private void OpenForm_Load(object sender, EventArgs e)
         {
             CameraController.Instance().InitializeCamera(pictureBox1);
@@ -34,16 +35,14 @@ namespace WindowsFormsApp1
         {
             if (button1.Tag.Equals(Constants.START_BUTTON))
             {
-                button1.Text = "SUBMIT";
-                button1.Tag = Constants.SUBMIT_BUTTON;
+                button1.Text = "EXIT";
+                button1.Tag = Constants.EXIT_BUTTON;
 
                 CameraController.Instance().StartStreaming();
             }
             else
             {
-                RegisterForm registerForm = new RegisterForm(this);
-
-                registerForm.Show();
+                Application.Exit();
             }
 
         }

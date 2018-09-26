@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace friendcognition
 {
@@ -30,7 +31,8 @@ namespace friendcognition
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            OpenForm openForm = new OpenForm();
+            openForm.Show();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -65,7 +67,8 @@ namespace friendcognition
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            OpenForm openForm = new OpenForm();
+            openForm.Show();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -76,6 +79,21 @@ namespace friendcognition
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

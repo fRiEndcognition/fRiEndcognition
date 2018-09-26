@@ -15,5 +15,7 @@ class Constants
 
     public const string START_BUTTON = "start_button";
     public const string SUBMIT_BUTTON = "submit_button";
+    public const string EXIT_BUTTON = "exit_button";
 }
+
 

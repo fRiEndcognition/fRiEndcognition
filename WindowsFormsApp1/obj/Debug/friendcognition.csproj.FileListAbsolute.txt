@@ -67,3 +67,4 @@ C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\Window
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csproj.CopyComplete
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.exe
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.pdb
+C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.Form1.resources
