@@ -57,6 +57,12 @@
     </Compile>
     <Compile Include="CameraController.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
     <Compile Include="OpenForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </Compile>
     <EmbeddedResource Include="AppForm.resx">
       <DependentUpon>AppForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpenForm.resx">
       <DependentUpon>OpenForm.cs</DependentUpon>
