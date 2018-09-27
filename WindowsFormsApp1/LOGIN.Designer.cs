@@ -38,18 +38,18 @@
             this.button7 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +94,7 @@
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.Location = new System.Drawing.Point(140, 439);
+            this.button6.Location = new System.Drawing.Point(132, 462);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(189, 38);
             this.button6.TabIndex = 10;
@@ -133,9 +133,8 @@
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(40, 122);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(376, 39);
+            this.textBox3.Size = new System.Drawing.Size(360, 39);
             this.textBox3.TabIndex = 13;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
@@ -144,7 +143,7 @@
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(40, 208);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(376, 39);
+            this.textBox4.Size = new System.Drawing.Size(360, 39);
             this.textBox4.TabIndex = 14;
             // 
             // button7
@@ -155,7 +154,7 @@
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Wingdings", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(426, 12);
+            this.button7.Location = new System.Drawing.Point(410, 12);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(32, 32);
             this.button7.TabIndex = 17;
@@ -182,9 +181,8 @@
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(474, 499);
+            this.panel1.Size = new System.Drawing.Size(458, 522);
             this.panel1.TabIndex = 9;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // panel2
             // 
@@ -200,8 +198,18 @@
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(474, 499);
+            this.panel2.Size = new System.Drawing.Size(458, 522);
             this.panel2.TabIndex = 18;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(40, 129);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(352, 39);
+            this.textBox6.TabIndex = 18;
             // 
             // button1
             // 
@@ -211,7 +219,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Wingdings", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(426, 12);
+            this.button1.Location = new System.Drawing.Point(410, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(32, 32);
             this.button1.TabIndex = 17;
@@ -226,18 +234,8 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(40, 240);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(368, 39);
+            this.textBox1.Size = new System.Drawing.Size(352, 39);
             this.textBox1.TabIndex = 14;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(40, 291);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(376, 39);
-            this.textBox2.TabIndex = 13;
             // 
             // label1
             // 
@@ -271,7 +269,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(141, 391);
+            this.button2.Location = new System.Drawing.Point(133, 414);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(189, 38);
             this.button2.TabIndex = 10;
@@ -318,8 +316,18 @@
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(40, 377);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(376, 39);
+            this.textBox5.Size = new System.Drawing.Size(360, 39);
             this.textBox5.TabIndex = 21;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(40, 291);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(360, 39);
+            this.textBox2.TabIndex = 13;
             // 
             // label6
             // 
@@ -332,7 +340,6 @@
             this.label6.Size = new System.Drawing.Size(108, 26);
             this.label6.TabIndex = 20;
             this.label6.Text = "Surname";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -346,22 +353,12 @@
             this.label5.TabIndex = 19;
             this.label5.Text = "Name";
             // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(40, 129);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(368, 39);
-            this.textBox6.TabIndex = 18;
-            // 
             // LOGIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(474, 499);
+            this.ClientSize = new System.Drawing.Size(458, 522);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
