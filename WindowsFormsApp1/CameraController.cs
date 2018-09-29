@@ -95,7 +95,7 @@ class CameraController
                 int x = facePosition.xc - (int)(facePosition.w * 0.5);
                 int y = facePosition.yc - (int)(facePosition.w * 0.5);
                 int w = (int)(facePosition.w * 1.2);
-                Pen pen = Pens.Red;
+                Pen pen = new Pen(Color.FromArgb(115, 115, 115, 115), 3);
                 graphics.DrawRectangle(pen, x, y, w, w);
             }
 
