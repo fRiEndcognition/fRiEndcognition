@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="CameraController.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="FaceRecognitionController.cs" />
     <Compile Include="LOGIN.cs">
       <SubType>Form</SubType>
     </Compile>
