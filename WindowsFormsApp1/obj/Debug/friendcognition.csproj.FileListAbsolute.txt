@@ -27,10 +27,8 @@ C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\bin\Debug\friendcognition.ex
 C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\bin\Debug\friendcognition.exe
 C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\bin\Debug\friendcognition.pdb
 C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csprojAssemblyReference.cache
-C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AppForm.resources
 C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.OpenForm.resources
 C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.Properties.Resources.resources
-C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.RegisterForm.resources
 C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csproj.GenerateResource.cache
 C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csproj.CoreCompileInputs.cache
 C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csproj.CopyComplete
@@ -66,3 +64,4 @@ C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\Window
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.exe
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.pdb
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.Form1.resources
+C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.LOGIN.resources
