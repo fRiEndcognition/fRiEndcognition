@@ -9,6 +9,13 @@ using System.Windows.Forms;
 
 class FaceRecognitionController
 {
+    public struct rectInfo
+    {
+        public int x;
+        public int y;
+        public int w;
+    }
+
     public long[] IDs;
     public long faceCount = 0;
     public int tracker = 0;
@@ -16,6 +23,8 @@ class FaceRecognitionController
     private string username;
     private int mouseX = 0;
     private int mouseY = 0;
+
+    private Dictionary<long, rectInfo[]> rectInfoDictionary;
 
     public void Initialize()
     {
@@ -104,6 +113,8 @@ class FaceRecognitionController
         {
             FSDK.TFacePosition facePosition = new FSDK.TFacePosition();
             FSDK.GetTrackerFacePosition(tracker, 0, IDs[i], ref facePosition);
+
+            Console.WriteLine(IDs[i]);
 
             int x = facePosition.xc - (int)(facePosition.w * 0.6);
             int y = facePosition.yc - (int)(facePosition.w * 0.6);
