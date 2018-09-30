@@ -96,7 +96,7 @@ class CameraController
 
                 int x = facePosition.xc - (int)(facePosition.w * 0.6);
                 int y = facePosition.yc - (int)(facePosition.w * 0.6);
-                int w = (int)(facePosition.w * 1.1);
+                int w = (int)(facePosition.w * 1.2);
 
                 String name;
                 int res = FSDK.GetAllNames(tracker, IDs[i], out name, 65536);
@@ -118,7 +118,7 @@ class CameraController
 
                 if (mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + w)
                 {
-                    pen = Pens.Blue;
+                    pen = new Pen(Color.FromArgb(115, 55, 55, 255), 3);
                     if (Control.MouseButtons == MouseButtons.Left)
                     {
                         if (FSDK.FSDKE_OK == FSDK.LockID(tracker, IDs[i]))
