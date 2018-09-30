@@ -53,15 +53,16 @@ C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\Window
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\bin\Debug\friendcognition.exe
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\bin\Debug\friendcognition.pdb
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csprojResolveAssemblyReference.cache
-C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AppForm.resources
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.LOGIN.resources
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.OpenForm.resources
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.Properties.Resources.resources
-C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.RegisterForm.resources
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csproj.GenerateResource.cache
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csproj.CoreCompileInputs.cache
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.csproj.CopyComplete
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.exe
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.pdb
+<<<<<<< HEAD
 C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.Form1.resources
 C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.LOGIN.resources
+=======
+>>>>>>> 85987dd... Fixed the Spaghetti
