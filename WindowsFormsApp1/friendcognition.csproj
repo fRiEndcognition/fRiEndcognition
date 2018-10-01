@@ -75,6 +75,9 @@
     <EmbeddedResource Include="LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NameInput.resx">
+      <DependentUpon>NameInput.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OpenForm.resx">
       <DependentUpon>OpenForm.cs</DependentUpon>
     </EmbeddedResource>

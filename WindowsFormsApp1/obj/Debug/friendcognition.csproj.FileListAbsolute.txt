@@ -66,3 +66,4 @@ C:\Users\almyk\Documents\GitHub\kaspegifs\fRiEndcognition\fRiEndcognition\Window
 C:\Coding\Projects\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.LOGIN.resources
 =======
 >>>>>>> 85987dd... Fixed the Spaghetti
+C:\Users\eglyt\Desktop\fRiEndcognition\WindowsFormsApp1\obj\Debug\friendcognition.NameInput.resources
