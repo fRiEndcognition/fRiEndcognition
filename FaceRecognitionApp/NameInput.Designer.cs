@@ -94,7 +94,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(350, 285);
+            this.ClientSize = new System.Drawing.Size(346, 281);
             this.ControlBox = false;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -106,6 +106,7 @@
             this.MinimizeBox = false;
             this.Name = "NameInput";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.NameInput_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
