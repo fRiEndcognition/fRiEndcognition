@@ -16,8 +16,8 @@ class Constants
     public const string SUBMIT_BUTTON = "submit_button";
     public const string EXIT_BUTTON = "exit_button";
 
-    //Don't forget to change the dir ----------------------->
-    public static readonly string LICENCE_KEY= System.IO.File.ReadAllText(@"C:\TOP\fRiEndcognition\LICENSE.txt");
+    //Don't forget to add the license file to bin/debug----------------------->
+    public static readonly string LICENCE_KEY= System.IO.File.ReadAllText(@".\LICENSE.txt");
 
 }
 
