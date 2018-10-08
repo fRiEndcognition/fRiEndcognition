@@ -56,7 +56,6 @@ namespace friendcognition
         {
             Application.Exit();
         }
-
         private void LoginPanel_Paint(object sender, PaintEventArgs e)
         {
 
