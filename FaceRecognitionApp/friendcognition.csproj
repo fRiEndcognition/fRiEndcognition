@@ -85,13 +85,8 @@
     <EmbeddedResource Include="NameInput.resx">
       <DependentUpon>NameInput.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD:FaceRecognitionApp/friendcognition.csproj
     <EmbeddedResource Include="CameraForm.resx">
       <DependentUpon>CameraForm.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="OpenForm.resx">
-      <DependentUpon>OpenForm.cs</DependentUpon>
->>>>>>> 2d2ef49cc6fa744008a71200b7481b470d0a1b33:WindowsFormsApp1/friendcognition.csproj
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
