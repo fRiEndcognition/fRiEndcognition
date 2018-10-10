@@ -14,6 +14,8 @@ namespace friendcognition
     {
         private string name;
 
+        private bool wantsToExit = true;
+
         public RegisterCamera(string name)
         {
             InitializeComponent();
@@ -36,7 +38,11 @@ namespace friendcognition
         {
 
             CameraController.Instance().StopStreaming();
-            Application.Exit();
+            if (wantsToExit)
+            {
+                Application.Exit();
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,6 +58,8 @@ namespace friendcognition
             {
                 WindowsFormsApp1.OpenForm openForm = new WindowsFormsApp1.OpenForm();
                 openForm.Show();
+                wantsToExit = false;
+                this.Close();
             }
         }
     }

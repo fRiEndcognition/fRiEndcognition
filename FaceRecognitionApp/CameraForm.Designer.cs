@@ -28,51 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.CameraFormExitButton = new System.Windows.Forms.Button();
             this.CameraPictureBox = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CameraPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.CameraFormExitButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.Color.LightGray;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(994, 56);
+            this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Image = global::friendcognition.Properties.Resources.if_82_output_3044701__1_;
+            this.button1.Location = new System.Drawing.Point(3, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 30);
+            this.button1.TabIndex = 1;
+            this.button1.Tag = "exit_button";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // CameraFormExitButton
             // 
-            this.CameraFormExitButton.BackColor = System.Drawing.Color.DarkOrange;
-            this.CameraFormExitButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CameraFormExitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CameraFormExitButton.AutoSize = true;
+            this.CameraFormExitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.CameraFormExitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CameraFormExitButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.CameraFormExitButton.FlatAppearance.BorderSize = 0;
-            this.CameraFormExitButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.CameraFormExitButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.CameraFormExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.CameraFormExitButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.CameraFormExitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.CameraFormExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CameraFormExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.CameraFormExitButton.Location = new System.Drawing.Point(0, 390);
+            this.CameraFormExitButton.ForeColor = System.Drawing.Color.Transparent;
+            this.CameraFormExitButton.Image = global::friendcognition.Properties.Resources.if_85_remove_3044710__1_;
+            this.CameraFormExitButton.Location = new System.Drawing.Point(958, 2);
             this.CameraFormExitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CameraFormExitButton.Name = "CameraFormExitButton";
-            this.CameraFormExitButton.Size = new System.Drawing.Size(884, 39);
+            this.CameraFormExitButton.Size = new System.Drawing.Size(33, 30);
             this.CameraFormExitButton.TabIndex = 0;
             this.CameraFormExitButton.Tag = "exit_button";
-            this.CameraFormExitButton.Text = "EXIT";
             this.CameraFormExitButton.UseVisualStyleBackColor = false;
             this.CameraFormExitButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // CameraPictureBox
             // 
             this.CameraPictureBox.BackColor = System.Drawing.SystemColors.WindowText;
+            this.CameraPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CameraPictureBox.Location = new System.Drawing.Point(0, 0);
             this.CameraPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CameraPictureBox.Name = "CameraPictureBox";
-            this.CameraPictureBox.Size = new System.Drawing.Size(884, 390);
+            this.CameraPictureBox.Size = new System.Drawing.Size(994, 536);
             this.CameraPictureBox.TabIndex = 1;
             this.CameraPictureBox.TabStop = false;
             this.CameraPictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // OpenForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(884, 429);
+            this.ClientSize = new System.Drawing.Size(994, 536);
             this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.CameraPictureBox);
-            this.Controls.Add(this.CameraFormExitButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
@@ -82,15 +125,18 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "fRiEndcognition";
             this.Load += new System.EventHandler(this.OpenForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CameraPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button CameraFormExitButton;
         private System.Windows.Forms.PictureBox CameraPictureBox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button CameraFormExitButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 
