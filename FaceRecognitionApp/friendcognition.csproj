@@ -123,5 +123,14 @@
   <ItemGroup>
     <None Include="Resources\close-512.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_85.remove_3044710.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_85.remove_3044710 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_82.output_3044701 %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
