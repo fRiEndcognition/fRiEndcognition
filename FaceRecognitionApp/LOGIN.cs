@@ -16,6 +16,8 @@ namespace friendcognition
         public LOGIN()
         {
             InitializeComponent();
+            LoginPasswordInput.PasswordChar = '*';
+            RegisterPasswordInput.PasswordChar = '*';
             this.CenterToScreen();
         }
         private void LOGIN_Load(object sender, EventArgs e)
@@ -57,10 +59,6 @@ namespace friendcognition
         private void button1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-        private void LoginPanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
