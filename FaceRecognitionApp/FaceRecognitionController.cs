@@ -37,7 +37,7 @@ class FaceRecognitionController
         FSDK.SetTrackerMultipleParameters(tracker, "HandleArbitraryRotations=false; DetermineFaceRotationAngle=false; InternalResizeWidth=300; FaceDetectionThreshold=5;", ref err);
     }
 
-    public void DoLoop(FSDK.CImage image, Image frameImage)
+    public void DoLoop(FSDK.CImage image, Image frameImage, bool recogniseFacialFeatures)
     {
         FSDK.FeedFrame(tracker, 0, image.ImageHandle, ref faceCount, out IDs, sizeof(long) * 256);
         Array.Resize(ref IDs, (int)faceCount);
@@ -54,49 +54,62 @@ class FaceRecognitionController
             int y = facePosition.yc - (int)(facePosition.w * 0.6);
             int w = (int)(facePosition.w * 1.2);
 
-            String name;
-            int res = FSDK.GetAllNames(tracker, IDs[i], out name, 65536);
-
-            if (FSDK.FSDKE_OK == res && name.Length > 0)
-            {
-                StringFormat format = new StringFormat();
-                format.Alignment = StringAlignment.Center;
-
-                graphics.DrawString(name, new System.Drawing.Font("Arial", 16),
-                    new System.Drawing.SolidBrush(System.Drawing.Color.LightGreen),
-                    facePosition.xc, y + w + 5, format);
-            }
-
-            mouseX = Cursor.Position.X;
-            mouseY = Cursor.Position.Y;
-
             Pen pen = new Pen(Color.FromArgb(115, 115, 115, 115), 3);
 
-            if (mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + w)
+            if (recogniseFacialFeatures == true)
             {
-                pen = new Pen(Color.FromArgb(115, 55, 55, 255), 3);
-                if (Control.MouseButtons == MouseButtons.Left)
+                FSDK.TPoint[] facialFeatures;
+                FSDK.GetTrackerFacialFeatures(tracker, 0, IDs[i], out facialFeatures);
+
+                foreach (FSDK.TPoint point in facialFeatures)
+                    graphics.FillEllipse(Brushes.Blue, point.x, point.y, 5, 5);
+            }
+            else
+            {
+                String name;
+                int res = FSDK.GetAllNames(tracker, IDs[i], out name, 65536);
+
+                if (FSDK.FSDKE_OK == res && name.Length > 0)
                 {
-                    if (FSDK.FSDKE_OK == FSDK.LockID(tracker, IDs[i]))
+                    pen = new Pen(Color.FromArgb(115, 55, 55, 255), 3);
+                    StringFormat format = new StringFormat();
+                    format.Alignment = StringAlignment.Center;
+
+                    graphics.DrawString(name, new System.Drawing.Font("Arial", 16),
+                        new System.Drawing.SolidBrush(System.Drawing.Color.Black),
+                        facePosition.xc, y + w + 5, format);
+                }
+
+                mouseX = Cursor.Position.X;
+                mouseY = Cursor.Position.Y;
+
+                if (mouseX >= x && mouseX <= x + w && mouseY >= y && mouseY <= y + w)
+                {
+                    pen = new Pen(Color.Blue,3);
+                    if (Control.MouseButtons == MouseButtons.Left)
                     {
-                        friendcognition.NameInput nameInput = new friendcognition.NameInput();
-                        if (nameInput.ShowDialog() == DialogResult.OK)
+                        if (FSDK.FSDKE_OK == FSDK.LockID(tracker, IDs[i]))
                         {
-                            username = nameInput.username;
-                            if (username == null || username.Length <= 0)
+                            friendcognition.NameInput nameInput = new friendcognition.NameInput();
+                            if (nameInput.ShowDialog() == DialogResult.OK)
                             {
-                                FSDK.SetName(tracker, IDs[i], "");
-                                FSDK.PurgeID(tracker, IDs[i]);
+                                username = nameInput.username;
+                                if (username == null || username.Length <= 0)
+                                {
+                                    FSDK.SetName(tracker, IDs[i], "");
+                                    FSDK.PurgeID(tracker, IDs[i]);
+                                }
+                                else
+                                {
+                                    FSDK.SetName(tracker, IDs[i], username);
+                                }
+                                FSDK.UnlockID(tracker, IDs[i]);
                             }
-                            else
-                            {
-                                FSDK.SetName(tracker, IDs[i], username);
-                            }
-                            FSDK.UnlockID(tracker, IDs[i]);
                         }
                     }
                 }
             }
+
             graphics.DrawRectangle(pen, x, y, w, w);
         }
     }
@@ -121,6 +134,17 @@ class FaceRecognitionController
             int w = (int)(facePosition.w * 1.2);
             Pen pen = new Pen(Color.FromArgb(255, 0, 0, 115), 3);
             graphics.DrawRectangle(pen, x, y, w, w);
+        }
+    }
+
+    public void SetName(string name, FSDK.CImage image)
+    {
+        FSDK.FeedFrame(tracker, 0, image.ImageHandle, ref faceCount, out IDs, sizeof(long) * 256);
+        Array.Resize(ref IDs, (int)faceCount);
+        if (FSDK.FSDKE_OK == FSDK.LockID(tracker, IDs[0]))
+        {
+            FSDK.SetName(tracker, IDs[0], name);
+            FSDK.UnlockID(tracker, IDs[0]);
         }
     }
 

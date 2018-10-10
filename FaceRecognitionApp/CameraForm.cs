@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
         private void OpenForm_Load(object sender, EventArgs e)
         {
             CameraController.Instance().InitializeCamera(CameraPictureBox);
-            CameraController.Instance().StartStreaming();
+            CameraController.Instance().StartStreaming(false);
         }
 
         private void button1_Click(object sender, EventArgs e)
