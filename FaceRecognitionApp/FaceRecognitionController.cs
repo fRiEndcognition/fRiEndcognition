@@ -48,7 +48,7 @@ class FaceRecognitionController
         rectInfoDictionary = new Dictionary<long, Queue<RectInfo>>();
     }
 
-    public void DoLoop(FSDK.CImage image, Image frameImage)
+    public void DoLoop(FSDK.CImage image, Image frameImage, bool recogniseFacialFeatures)
     {
         FSDK.FeedFrame(tracker, 0, image.ImageHandle, ref faceCount, out IDs, sizeof(long) * 256);
         Array.Resize(ref IDs, (int)faceCount);
@@ -69,26 +69,35 @@ class FaceRecognitionController
 
             currentRectInfo = ProccessRectInfo(currentRectInfo, IDs[i]);
 
-            String name;
-            int res = FSDK.GetAllNames(tracker, IDs[i], out name, 65536);
-
-            if (FSDK.FSDKE_OK == res && name.Length > 0)
-            {
-                StringFormat format = new StringFormat();
-                format.Alignment = StringAlignment.Center;
-
-                graphics.DrawString(name, new System.Drawing.Font("Arial", 16),
-                    new System.Drawing.SolidBrush(System.Drawing.Color.LightGreen),
-                    currentRectInfo.x + currentRectInfo.w / 2, currentRectInfo.y + currentRectInfo.w + 5, format);
-            }
-
-            
-
             Pen pen = new Pen(Color.FromArgb(115, 115, 115, 115), 3);
 
-            MouseOnRect(currentRectInfo, ref pen, i);
+            if (recogniseFacialFeatures == true)
+            {
+                FSDK.TPoint[] facialFeatures;
+                FSDK.GetTrackerFacialFeatures(tracker, 0, IDs[i], out facialFeatures);
+                foreach (FSDK.TPoint point in facialFeatures)
+                    graphics.FillEllipse(Brushes.Blue, point.x, point.y, 5, 5);
+            }
+            else
+            {
+                String name;
+                int res = FSDK.GetAllNames(tracker, IDs[i], out name, 65536);
 
-            graphics.DrawRectangle(pen, currentRectInfo.x, currentRectInfo.y, currentRectInfo.w, currentRectInfo.w);
+                if (FSDK.FSDKE_OK == res && name.Length > 0)
+                {
+                    StringFormat format = new StringFormat();
+                    format.Alignment = StringAlignment.Center;
+
+                    graphics.DrawString(name, new System.Drawing.Font("Arial", 16),
+                    new System.Drawing.SolidBrush(System.Drawing.Color.LightGreen),
+                    currentRectInfo.x + currentRectInfo.w / 2, currentRectInfo.y + currentRectInfo.w + 5, format);
+                }
+                pen = new Pen(Color.FromArgb(115, 115, 115, 115), 3);
+
+                MouseOnRect(currentRectInfo, ref pen, i);
+
+                graphics.DrawRectangle(pen, currentRectInfo.x, currentRectInfo.y, currentRectInfo.w, currentRectInfo.w);
+            }
         }
     }
 
@@ -187,6 +196,17 @@ class FaceRecognitionController
             int w = (int)(facePosition.w * 1.2);
             Pen pen = new Pen(Color.FromArgb(255, 0, 0, 115), 3);
             graphics.DrawRectangle(pen, x, y, w, w);
+        }
+    }
+
+    public void SetName(string name, FSDK.CImage image)
+    {
+        FSDK.FeedFrame(tracker, 0, image.ImageHandle, ref faceCount, out IDs, sizeof(long) * 256);
+        Array.Resize(ref IDs, (int)faceCount);
+        if (FSDK.FSDKE_OK == FSDK.LockID(tracker, IDs[0]))
+        {
+            FSDK.SetName(tracker, IDs[0], name);
+            FSDK.UnlockID(tracker, IDs[0]);
         }
     }
 

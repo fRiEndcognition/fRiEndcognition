@@ -32,8 +32,10 @@ namespace friendcognition
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            OpenForm openForm = new OpenForm();
-            openForm.Show();
+            string name;
+            name = RegisterNameInput.Text;
+            RegisterCamera registerCamera = new RegisterCamera(name);
+            registerCamera.Show();
         }
         private void button7_Click_1(object sender, EventArgs e)
         {
