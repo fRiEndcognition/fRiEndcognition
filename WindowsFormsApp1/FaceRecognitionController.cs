@@ -65,8 +65,6 @@ class FaceRecognitionController
             int y = facePosition.yc - (int)(facePosition.w * 0.6);
             int w = (int)(facePosition.w * 1.2);
 
-            //rectInfoDictionary[IDs[i]];
-
             RectInfo currentRectInfo = new RectInfo(x, y, w);
 
             currentRectInfo = ProccessRectInfo(currentRectInfo, IDs[i]);
