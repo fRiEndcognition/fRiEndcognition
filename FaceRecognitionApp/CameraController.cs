@@ -13,10 +13,14 @@ class CameraController
     private string cameraName;
     private PictureBox currentPictureBox;
     public bool cameraWorking = true;
+    FaceRecognitionController faceRecognitionController;
+    int cameraHandle = 0;
 
     public void InitializeCamera(PictureBox pictureBox)
     {
+        faceRecognitionController = new FaceRecognitionController();
         currentPictureBox = pictureBox;
+
         if (FSDK.FSDKE_OK != FSDK.ActivateLibrary(Constants.LICENCE_KEY))
         {
             MessageBox.Show(Constants.ERROR_ACTIVATING_FACESDK, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -45,9 +49,8 @@ class CameraController
         currentPictureBox.Height = formatList[videoFormat].Height;
         }
 
-    public void StartStreaming()
+    public void StartStreaming(bool recogniseFacialFeatures)
     {
-        int cameraHandle = 0;
         if (FSDKCam.OpenVideoCamera(ref cameraName, ref cameraHandle) != FSDK.FSDKE_OK)
         {
             MessageBox.Show(Constants.CAMERA_OPEN_ERROR, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -67,7 +70,7 @@ class CameraController
             FSDK.CImage image = new FSDK.CImage(imageHandle);
             Image frameImage = image.ToCLRImage();
 
-            faceRecognitionController.DoLoop(image, frameImage);
+            faceRecognitionController.DoLoop(image, frameImage, recogniseFacialFeatures);
 
             currentPictureBox.Image = frameImage;
             GC.Collect();
@@ -87,6 +90,15 @@ class CameraController
     public void ChangePictureBox(PictureBox pictureBox)
     {
         currentPictureBox = pictureBox;
+    }
+
+    public void SetName(string name)
+    {
+        Application.DoEvents();
+        Int32 imageHandle = 0;
+        FSDKCam.GrabFrame(cameraHandle, ref imageHandle);
+        FSDK.CImage image = new FSDK.CImage(imageHandle);
+        faceRecognitionController.SetName(name, image);
     }
 
     public static CameraController Instance()
