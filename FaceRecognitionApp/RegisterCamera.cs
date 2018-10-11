@@ -19,14 +19,22 @@ namespace friendcognition
         public RegisterCamera(string name)
         {
             InitializeComponent();
-            this.FormClosed += new FormClosedEventHandler(closingThisForm);
             this.name = name;
         }
 
         private void RegisterCamera_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             CameraController.Instance().InitializeCamera(CameraPictureBox);
-            CameraController.Instance().StartStreaming(true);
+            CameraPictureBox.Width = CameraController.Instance().getVideoFormat().Width;
+            CameraPictureBox.Height = CameraController.Instance().getVideoFormat().Height;
+            this.Width = CameraController.Instance().getVideoFormat().Width;
+            this.Height = CameraController.Instance().getVideoFormat().Height;
+        }
+
+        private void RegisterCamera_Shown(object sender, EventArgs e)
+        {
+            CameraController.Instance().StartStreaming(true, this.Location);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -34,7 +42,7 @@ namespace friendcognition
 
         }
 
-        void closingThisForm(object sender, FormClosedEventArgs e)
+        private void RegisterCamera_Closing(object sender, FormClosingEventArgs e)
         {
 
             CameraController.Instance().StopStreaming();
@@ -42,7 +50,7 @@ namespace friendcognition
             {
                 Application.Exit();
             }
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)

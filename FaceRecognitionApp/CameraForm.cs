@@ -19,19 +19,23 @@ namespace WindowsFormsApp1
 
         public OpenForm()
         {
-
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
-            this.CenterToScreen();
-            this.FormClosed += new FormClosedEventHandler(closingThisForm);
-
         }
-
 
         private void OpenForm_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             CameraController.Instance().InitializeCamera(CameraPictureBox);
-            CameraController.Instance().StartStreaming(false);
+            CameraPictureBox.Width = CameraController.Instance().getVideoFormat().Width;
+            CameraPictureBox.Height = CameraController.Instance().getVideoFormat().Height;
+            this.Width = CameraController.Instance().getVideoFormat().Width;
+            this.Height = CameraController.Instance().getVideoFormat().Height;
+        }
+
+
+        private void OpenForm_Shown(object sender, EventArgs e)
+        {
+            CameraController.Instance().StartStreaming(false,this.Location);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,7 +53,7 @@ namespace WindowsFormsApp1
 
         }
 
-        void closingThisForm(object sender, FormClosedEventArgs e)
+        private void OpenForm_Closing(object sender, FormClosingEventArgs e)
         {
 
             CameraController.Instance().StopStreaming();
