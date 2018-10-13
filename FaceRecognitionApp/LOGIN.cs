@@ -34,10 +34,18 @@ namespace friendcognition
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            string name;
-            name = RegisterNameInput.Text;
-            RegisterCamera registerCamera = new RegisterCamera(name);
-            registerCamera.Show();
+            string name = RegisterNameInput.Text;
+            string surname = RegisterSurnameInput.Text;
+            string email = RegisterEmailInput.Text;
+            string password = RegisterPasswordInput.Text;
+
+            if (DataController.Instance().Register(name, surname, email, password))
+            {
+                RegisterCamera registerCamera = new RegisterCamera(name, surname);
+                registerCamera.Show();
+            }
+
+            
         }
         private void button7_Click_1(object sender, EventArgs e)
         {
@@ -53,8 +61,15 @@ namespace friendcognition
         }
         private void button2_Click_1(object sender, EventArgs e)
         {
-            OpenForm openForm = new OpenForm();
-            openForm.Show();
+            string email = LoginEmailInput.Text;
+            string password = LoginPasswordInput.Text;
+
+            if (DataController.Instance().Login(email, password))
+            {
+                OpenForm openForm = new OpenForm();
+                openForm.Show();
+            }
+            
         }
         private void button1_Click_1(object sender, EventArgs e)
         {

@@ -13,13 +13,15 @@ namespace friendcognition
     public partial class RegisterCamera : Form
     {
         private string name;
+        private string surname;
 
         private bool wantsToExit = true;
 
-        public RegisterCamera(string name)
+        public RegisterCamera(string name, string surname)
         {
             InitializeComponent();
             this.name = name;
+            this.surname = surname;
         }
 
         private void RegisterCamera_Load(object sender, EventArgs e)

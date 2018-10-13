@@ -26,7 +26,6 @@ class FaceRecognitionController
     public long[] IDs;
     public long faceCount = 0;
     public int tracker = 0;
-    private string trackerFile = "tracker.dat";
     private string username;
     private int mouseX = 0;
     private int mouseY = 0;
@@ -41,16 +40,7 @@ class FaceRecognitionController
     {
         tracker = 0;
 
-        /*
-        if (FSDK.LoadTrackerMemoryFromFile(ref tracker, trackerFile) != FSDK.FSDKE_OK)
-        {
-            FSDK.CreateTracker(ref tracker);
-        }
-        */
-
-        // Load existing data or create a new data file vvvv
-
-        DataController.Instance().LoadData(ref tracker);
+        DataController.Instance().LoadFaceData(ref tracker);
 
         int err = 0;
         FSDK.SetTrackerMultipleParameters(tracker, "HandleArbitraryRotations=false; DetermineFaceRotationAngle=false; InternalResizeWidth=300; FaceDetectionThreshold=5;", ref err);
@@ -156,7 +146,7 @@ class FaceRecognitionController
 
     public void Stop()
     {
-        DataController.Instance().SaveData(tracker);
+        DataController.Instance().SaveFaceData(tracker);
     }
 
     private void MouseOnRect(RectInfo rectInfo, ref Pen pen, int i)
