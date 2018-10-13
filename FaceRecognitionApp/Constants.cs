@@ -10,6 +10,18 @@ class Constants
     public const string NO_CAMERA_ERROR = "No camera found";
     public const string CAMERA_OPEN_ERROR = "Unable to open camera";
 
+    public const string WRONG_EMAIL = "Wrong email";
+    public const string WRONG_PASSWORD = "Wrong password";
+
+    public const string INVALID_NAME = "Invalind name";
+    public const string INVALID_SURNAME = "Invalid surname";
+
+    public const string EMAIL_ALREADY_EXISTS = "Such email already exists";
+
+    // Regex
+
+    public const string REGEX_ONLY_LETTERS = @"^[a-zA-Z]+$";
+    public const string REGEX_EMAIL = @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
     // buttons
 
     public const string PHOTO_BUTTON = "photo_button";

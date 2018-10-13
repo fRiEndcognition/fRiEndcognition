@@ -49,7 +49,7 @@ class DataController
     {
         if (!loginInfo.ContainsKey(email))
         {
-            MessageBox.Show("Wrong email!");
+            MessageBox.Show(Constants.WRONG_EMAIL);
             return false;
         }
 
@@ -58,7 +58,7 @@ class DataController
             return true;
         }
 
-        MessageBox.Show("Wrong password!");
+        MessageBox.Show(Constants.WRONG_PASSWORD);
         return false;
 
     }
@@ -67,24 +67,24 @@ class DataController
     {
         if (!ValidateEmail(email))
         {
-            MessageBox.Show("Wrong email!");
+            MessageBox.Show(Constants.WRONG_EMAIL);
             return false;
         }
 
         if (loginInfo.ContainsKey(email))
         {
-            MessageBox.Show("Such email already exists!");
+            MessageBox.Show(Constants.EMAIL_ALREADY_EXISTS);
             return false;
         }
 
-        if (!ValidateString(name))
+        if (!ValidateStringOnlyLetters(name))
         {
-            MessageBox.Show("Invalid name!");
+            MessageBox.Show(Constants.INVALID_NAME);
             return false;
         }
-        if (!ValidateString(name))
+        if (!ValidateStringOnlyLetters(name))
         {
-            MessageBox.Show("Invalid surname!");
+            MessageBox.Show(Constants.INVALID_SURNAME);
             return false;
         }
 
@@ -96,8 +96,7 @@ class DataController
 
     private bool ValidateEmail(string email)
     {
-        string pattern = @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
-        if (Regex.IsMatch(email, pattern))
+        if (Regex.IsMatch(email, Constants.REGEX_EMAIL))
         {
             return true;
         }
@@ -107,10 +106,9 @@ class DataController
         }
     }
 
-    private bool ValidateString(string input)
+    private bool ValidateStringOnlyLetters(string input)
     {
-        string pattern = @"^[a-zA-Z]+$";
-        if (Regex.IsMatch(input, pattern))
+        if (Regex.IsMatch(input, Constants.REGEX_ONLY_LETTERS))
         {
             return true;
         }
