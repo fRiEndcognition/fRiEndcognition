@@ -118,13 +118,15 @@
             this.Controls.Add(this.CameraPictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximizeBox = false;
             this.Name = "OpenForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "fRiEndcognition";
             this.Load += new System.EventHandler(this.OpenForm_Load);
+            this.Shown += new System.EventHandler(this.OpenForm_Shown);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpenForm_Closing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CameraPictureBox)).EndInit();

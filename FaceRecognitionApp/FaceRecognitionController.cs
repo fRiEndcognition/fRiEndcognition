@@ -30,12 +30,14 @@ class FaceRecognitionController
     private string username;
     private int mouseX = 0;
     private int mouseY = 0;
+    private int formX = 0;
+    private int formY = 0;
 
     private int framesToSave = 10;
 
     private Dictionary<long, Queue<RectInfo>> rectInfoDictionary;
 
-    public void Initialize()
+    public void Initialize(Point location)
     {
         tracker = 0;
         if (FSDK.LoadTrackerMemoryFromFile(ref tracker, trackerFile) != FSDK.FSDKE_OK)
@@ -46,6 +48,9 @@ class FaceRecognitionController
         FSDK.SetTrackerMultipleParameters(tracker, "HandleArbitraryRotations=false; DetermineFaceRotationAngle=false; InternalResizeWidth=300; FaceDetectionThreshold=5;", ref err);
 
         rectInfoDictionary = new Dictionary<long, Queue<RectInfo>>();
+
+        formX = location.X;
+        formY = location.Y;
     }
 
     public void DoLoop(FSDK.CImage image, Image frameImage, bool recogniseFacialFeatures)
@@ -148,8 +153,8 @@ class FaceRecognitionController
 
     private void MouseOnRect(RectInfo rectInfo, ref Pen pen, int i)
     {
-        int x = rectInfo.x;
-        int y = rectInfo.y;
+        int x = rectInfo.x + formX;
+        int y = rectInfo.y + formY;
         int w = rectInfo.w;
 
         mouseX = Cursor.Position.X;

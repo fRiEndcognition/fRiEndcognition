@@ -82,8 +82,10 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "fRiEndcognition";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
             this.Load += new System.EventHandler(this.RegisterCamera_Load);
+            this.Shown += new System.EventHandler(this.RegisterCamera_Shown);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterCamera_Closing);
             ((System.ComponentModel.ISupportInitialize)(this.CameraPictureBox)).EndInit();
             this.ResumeLayout(false);
 

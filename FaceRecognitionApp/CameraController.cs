@@ -13,8 +13,9 @@ class CameraController
     private string cameraName;
     private PictureBox currentPictureBox;
     public bool cameraWorking = true;
-    FaceRecognitionController faceRecognitionController;
-    int cameraHandle = 0;
+    private FaceRecognitionController faceRecognitionController;
+    private int cameraHandle = 0;
+    private FSDKCam.VideoFormatInfo[] formatList;
 
     public void InitializeCamera(PictureBox pictureBox)
     {
@@ -41,7 +42,6 @@ class CameraController
         }
 
         cameraName = cameraList[0];
-        FSDKCam.VideoFormatInfo[] formatList;
         FSDKCam.GetVideoFormatList(ref cameraName, out formatList, out cameraCount);
 
         int videoFormat = 0;
@@ -49,7 +49,7 @@ class CameraController
         currentPictureBox.Height = formatList[videoFormat].Height;
         }
 
-    public void StartStreaming(bool recogniseFacialFeatures)
+    public void StartStreaming(bool recogniseFacialFeatures, Point location)
     {
         if (FSDKCam.OpenVideoCamera(ref cameraName, ref cameraHandle) != FSDK.FSDKE_OK)
         {
@@ -58,7 +58,7 @@ class CameraController
         }
 
         FaceRecognitionController faceRecognitionController = new FaceRecognitionController();
-        faceRecognitionController.Initialize();
+        faceRecognitionController.Initialize(location);
 
         cameraWorking = true;
 
@@ -80,6 +80,11 @@ class CameraController
 
         FSDKCam.CloseVideoCamera(cameraHandle);
         FSDKCam.FinalizeCapturing();
+    }
+
+    public FSDKCam.VideoFormatInfo getVideoFormat()
+    {
+        return formatList[0];
     }
 
     public void StopStreaming()
