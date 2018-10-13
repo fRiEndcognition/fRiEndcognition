@@ -30,6 +30,7 @@ namespace friendcognition
             CameraPictureBox.Height = CameraController.Instance().getVideoFormat().Height;
             this.Width = CameraController.Instance().getVideoFormat().Width;
             this.Height = CameraController.Instance().getVideoFormat().Height;
+            this.CenterToScreen();
         }
 
         private void RegisterCamera_Shown(object sender, EventArgs e)

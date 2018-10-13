@@ -70,13 +70,13 @@ class CameraController
             FSDK.CImage image = new FSDK.CImage(imageHandle);
             Image frameImage = image.ToCLRImage();
 
-            faceRecognitionController.DoLoop(image, frameImage, recogniseFacialFeatures);
+            faceRecognitionController.Update(image, frameImage, recogniseFacialFeatures);
 
             currentPictureBox.Image = frameImage;
             GC.Collect();
         }
 
-        faceRecognitionController.SaveData();
+        faceRecognitionController.Stop();
 
         FSDKCam.CloseVideoCamera(cameraHandle);
         FSDKCam.FinalizeCapturing();
