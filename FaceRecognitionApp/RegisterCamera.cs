@@ -23,7 +23,6 @@ namespace friendcognition
             this.name = name;
             this.surname = surname;
         }
-
         private void RegisterCamera_Load(object sender, EventArgs e)
         {
             this.CenterToScreen();
@@ -34,29 +33,19 @@ namespace friendcognition
             this.Height = CameraController.Instance().getVideoFormat().Height;
             this.CenterToScreen();
         }
-
         private void RegisterCamera_Shown(object sender, EventArgs e)
         {
             CameraController.Instance().StartStreaming(true, this.Location);
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void RegisterCamera_Closing(object sender, FormClosingEventArgs e)
         {
-
             CameraController.Instance().StopStreaming();
             if (wantsToExit)
             {
                 Application.Exit();
             }
-
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void SubmitButton_Click(object sender, EventArgs e)
         {
             if (SubmitButton.Tag.Equals(Constants.PHOTO_BUTTON))
             {

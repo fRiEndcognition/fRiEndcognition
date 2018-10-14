@@ -69,7 +69,7 @@
             this.LoginButtonOff.TabIndex = 8;
             this.LoginButtonOff.Text = "Login";
             this.LoginButtonOff.UseVisualStyleBackColor = false;
-            this.LoginButtonOff.Click += new System.EventHandler(this.button4_Click);
+            this.LoginButtonOff.Click += new System.EventHandler(this.LoginButtonOff_Click);
             // 
             // RegisterButtonOn
             // 
@@ -86,7 +86,7 @@
             this.RegisterButtonOn.TabIndex = 9;
             this.RegisterButtonOn.Text = "Register";
             this.RegisterButtonOn.UseVisualStyleBackColor = false;
-            this.RegisterButtonOn.Click += new System.EventHandler(this.button5_Click);
+            this.RegisterButtonOn.Click += new System.EventHandler(this.RegisterButtonOn_Click);
             // 
             // Register
             // 
@@ -96,14 +96,14 @@
             this.Register.FlatAppearance.BorderSize = 0;
             this.Register.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Register.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Register.Location = new System.Drawing.Point(107, 410);
+            this.Register.Location = new System.Drawing.Point(81, 358);
             this.Register.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Register.Name = "Register";
             this.Register.Size = new System.Drawing.Size(189, 38);
             this.Register.TabIndex = 10;
             this.Register.Text = "Register";
             this.Register.UseVisualStyleBackColor = false;
-            this.Register.Click += new System.EventHandler(this.button6_Click);
+            this.Register.Click += new System.EventHandler(this.Register_Click);
             // 
             // RegisterEmailLabel
             // 
@@ -111,7 +111,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RegisterEmailLabel.AutoSize = true;
             this.RegisterEmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterEmailLabel.Location = new System.Drawing.Point(37, 243);
+            this.RegisterEmailLabel.Location = new System.Drawing.Point(37, 211);
             this.RegisterEmailLabel.Name = "RegisterEmailLabel";
             this.RegisterEmailLabel.Size = new System.Drawing.Size(73, 26);
             this.RegisterEmailLabel.TabIndex = 11;
@@ -123,7 +123,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RegisterPasswordLabel.AutoSize = true;
             this.RegisterPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterPasswordLabel.Location = new System.Drawing.Point(35, 320);
+            this.RegisterPasswordLabel.Location = new System.Drawing.Point(35, 275);
             this.RegisterPasswordLabel.Name = "RegisterPasswordLabel";
             this.RegisterPasswordLabel.Size = new System.Drawing.Size(116, 26);
             this.RegisterPasswordLabel.TabIndex = 12;
@@ -138,7 +138,7 @@
             this.RegisterNameInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RegisterNameInput.Multiline = true;
             this.RegisterNameInput.Name = "RegisterNameInput";
-            this.RegisterNameInput.Size = new System.Drawing.Size(308, 34);
+            this.RegisterNameInput.Size = new System.Drawing.Size(256, 34);
             this.RegisterNameInput.TabIndex = 13;
             // 
             // RegisterSurnameInput
@@ -146,11 +146,11 @@
             this.RegisterSurnameInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RegisterSurnameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterSurnameInput.Location = new System.Drawing.Point(40, 192);
+            this.RegisterSurnameInput.Location = new System.Drawing.Point(40, 175);
             this.RegisterSurnameInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RegisterSurnameInput.Multiline = true;
             this.RegisterSurnameInput.Name = "RegisterSurnameInput";
-            this.RegisterSurnameInput.Size = new System.Drawing.Size(308, 34);
+            this.RegisterSurnameInput.Size = new System.Drawing.Size(256, 34);
             this.RegisterSurnameInput.TabIndex = 14;
             // 
             // RegisterExit
@@ -161,14 +161,14 @@
             this.RegisterExit.FlatAppearance.BorderSize = 0;
             this.RegisterExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterExit.Font = new System.Drawing.Font("Wingdings", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterExit.Location = new System.Drawing.Point(358, 12);
+            this.RegisterExit.Location = new System.Drawing.Point(306, 12);
             this.RegisterExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RegisterExit.Name = "RegisterExit";
             this.RegisterExit.Size = new System.Drawing.Size(32, 32);
             this.RegisterExit.TabIndex = 17;
             this.RegisterExit.Text = "X";
             this.RegisterExit.UseVisualStyleBackColor = false;
-            this.RegisterExit.Click += new System.EventHandler(this.button7_Click_1);
+            this.RegisterExit.Click += new System.EventHandler(this.RegisterExit_Click);
             // 
             // RegisterPanel
             // 
@@ -190,7 +190,7 @@
             this.RegisterPanel.Location = new System.Drawing.Point(0, 0);
             this.RegisterPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RegisterPanel.Name = "RegisterPanel";
-            this.RegisterPanel.Size = new System.Drawing.Size(407, 470);
+            this.RegisterPanel.Size = new System.Drawing.Size(355, 418);
             this.RegisterPanel.TabIndex = 9;
             // 
             // LoginPanel
@@ -209,7 +209,7 @@
             this.LoginPanel.Location = new System.Drawing.Point(0, 0);
             this.LoginPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoginPanel.Name = "LoginPanel";
-            this.LoginPanel.Size = new System.Drawing.Size(407, 470);
+            this.LoginPanel.Size = new System.Drawing.Size(355, 418);
             this.LoginPanel.TabIndex = 18;
             // 
             // LoginEmailInput
@@ -221,7 +221,7 @@
             this.LoginEmailInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoginEmailInput.Multiline = true;
             this.LoginEmailInput.Name = "LoginEmailInput";
-            this.LoginEmailInput.Size = new System.Drawing.Size(300, 34);
+            this.LoginEmailInput.Size = new System.Drawing.Size(248, 34);
             this.LoginEmailInput.TabIndex = 18;
             // 
             // LoginExitButton
@@ -232,14 +232,14 @@
             this.LoginExitButton.FlatAppearance.BorderSize = 0;
             this.LoginExitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginExitButton.Font = new System.Drawing.Font("Wingdings", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginExitButton.Location = new System.Drawing.Point(358, 12);
+            this.LoginExitButton.Location = new System.Drawing.Point(306, 12);
             this.LoginExitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoginExitButton.Name = "LoginExitButton";
             this.LoginExitButton.Size = new System.Drawing.Size(32, 32);
             this.LoginExitButton.TabIndex = 17;
             this.LoginExitButton.Text = "X";
             this.LoginExitButton.UseVisualStyleBackColor = false;
-            this.LoginExitButton.Click += new System.EventHandler(this.button1_Click_1);
+            this.LoginExitButton.Click += new System.EventHandler(this.LoginExitButton_Click);
             // 
             // LoginPasswordInput
             // 
@@ -250,7 +250,7 @@
             this.LoginPasswordInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoginPasswordInput.Multiline = true;
             this.LoginPasswordInput.Name = "LoginPasswordInput";
-            this.LoginPasswordInput.Size = new System.Drawing.Size(300, 34);
+            this.LoginPasswordInput.Size = new System.Drawing.Size(248, 34);
             this.LoginPasswordInput.TabIndex = 14;
             // 
             // PasswordLabel
@@ -285,14 +285,14 @@
             this.LoginConfirmButton.FlatAppearance.BorderSize = 0;
             this.LoginConfirmButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.LoginConfirmButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LoginConfirmButton.Location = new System.Drawing.Point(108, 363);
+            this.LoginConfirmButton.Location = new System.Drawing.Point(82, 311);
             this.LoginConfirmButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoginConfirmButton.Name = "LoginConfirmButton";
             this.LoginConfirmButton.Size = new System.Drawing.Size(189, 38);
             this.LoginConfirmButton.TabIndex = 10;
             this.LoginConfirmButton.Text = "Login";
             this.LoginConfirmButton.UseVisualStyleBackColor = false;
-            this.LoginConfirmButton.Click += new System.EventHandler(this.button2_Click_1);
+            this.LoginConfirmButton.Click += new System.EventHandler(this.LoginConfirmButton_Click);
             // 
             // RegisterButtonOff
             // 
@@ -309,7 +309,7 @@
             this.RegisterButtonOff.TabIndex = 9;
             this.RegisterButtonOff.Text = "Register";
             this.RegisterButtonOff.UseVisualStyleBackColor = false;
-            this.RegisterButtonOff.Click += new System.EventHandler(this.button3_Click_1);
+            this.RegisterButtonOff.Click += new System.EventHandler(this.RegisterButtonOff_Click);
             // 
             // LoginButtonOn
             // 
@@ -326,18 +326,18 @@
             this.LoginButtonOn.TabIndex = 8;
             this.LoginButtonOn.Text = "Login";
             this.LoginButtonOn.UseVisualStyleBackColor = false;
-            this.LoginButtonOn.Click += new System.EventHandler(this.button8_Click_1);
+            this.LoginButtonOn.Click += new System.EventHandler(this.LoginButtonOn_Click);
             // 
             // RegisterPasswordInput
             // 
             this.RegisterPasswordInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RegisterPasswordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterPasswordInput.Location = new System.Drawing.Point(40, 348);
+            this.RegisterPasswordInput.Location = new System.Drawing.Point(40, 303);
             this.RegisterPasswordInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RegisterPasswordInput.Multiline = true;
             this.RegisterPasswordInput.Name = "RegisterPasswordInput";
-            this.RegisterPasswordInput.Size = new System.Drawing.Size(308, 34);
+            this.RegisterPasswordInput.Size = new System.Drawing.Size(256, 34);
             this.RegisterPasswordInput.TabIndex = 21;
             // 
             // RegisterEmailInput
@@ -345,11 +345,11 @@
             this.RegisterEmailInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RegisterEmailInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterEmailInput.Location = new System.Drawing.Point(40, 271);
+            this.RegisterEmailInput.Location = new System.Drawing.Point(40, 239);
             this.RegisterEmailInput.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RegisterEmailInput.Multiline = true;
             this.RegisterEmailInput.Name = "RegisterEmailInput";
-            this.RegisterEmailInput.Size = new System.Drawing.Size(308, 34);
+            this.RegisterEmailInput.Size = new System.Drawing.Size(256, 34);
             this.RegisterEmailInput.TabIndex = 13;
             // 
             // RegisterSurnameLabel
@@ -358,7 +358,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RegisterSurnameLabel.AutoSize = true;
             this.RegisterSurnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterSurnameLabel.Location = new System.Drawing.Point(35, 164);
+            this.RegisterSurnameLabel.Location = new System.Drawing.Point(37, 147);
             this.RegisterSurnameLabel.Name = "RegisterSurnameLabel";
             this.RegisterSurnameLabel.Size = new System.Drawing.Size(108, 26);
             this.RegisterSurnameLabel.TabIndex = 20;
@@ -381,7 +381,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(407, 470);
+            this.ClientSize = new System.Drawing.Size(355, 418);
             this.ControlBox = false;
             this.Controls.Add(this.RegisterPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -391,7 +391,6 @@
             this.Name = "LOGIN";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Load += new System.EventHandler(this.LOGIN_Load);
             this.RegisterPanel.ResumeLayout(false);
             this.RegisterPanel.PerformLayout();
             this.LoginPanel.ResumeLayout(false);

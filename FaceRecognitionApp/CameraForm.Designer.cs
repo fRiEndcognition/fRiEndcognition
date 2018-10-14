@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LogoutButton = new System.Windows.Forms.Button();
             this.CameraFormExitButton = new System.Windows.Forms.Button();
             this.CameraPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -40,7 +40,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.LogoutButton);
             this.panel1.Controls.Add(this.CameraFormExitButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.Color.LightGray;
@@ -48,29 +48,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(994, 56);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button1
+            // LogoutButton
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Image = global::friendcognition.Properties.Resources.if_82_output_3044701__1_;
-            this.button1.Location = new System.Drawing.Point(3, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Tag = "exit_button";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.LogoutButton.AutoSize = true;
+            this.LogoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
+            this.LogoutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.LogoutButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.LogoutButton.FlatAppearance.BorderSize = 0;
+            this.LogoutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.LogoutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.LogoutButton.ForeColor = System.Drawing.Color.Transparent;
+            this.LogoutButton.Image = global::friendcognition.Properties.Resources.if_82_output_3044701__1_;
+            this.LogoutButton.Location = new System.Drawing.Point(3, 2);
+            this.LogoutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(33, 30);
+            this.LogoutButton.TabIndex = 1;
+            this.LogoutButton.Tag = "exit_button";
+            this.LogoutButton.UseVisualStyleBackColor = false;
+            this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
             // CameraFormExitButton
             // 
@@ -93,7 +92,7 @@
             this.CameraFormExitButton.TabIndex = 0;
             this.CameraFormExitButton.Tag = "exit_button";
             this.CameraFormExitButton.UseVisualStyleBackColor = false;
-            this.CameraFormExitButton.Click += new System.EventHandler(this.button1_Click);
+            this.CameraFormExitButton.Click += new System.EventHandler(this.CameraFormExitButton_Click);
             // 
             // CameraPictureBox
             // 
@@ -105,7 +104,6 @@
             this.CameraPictureBox.Size = new System.Drawing.Size(994, 536);
             this.CameraPictureBox.TabIndex = 1;
             this.CameraPictureBox.TabStop = false;
-            this.CameraPictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // OpenForm
             // 
@@ -121,12 +119,11 @@
             this.Name = "OpenForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "fRiEndcognition";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpenForm_Closing);
             this.Load += new System.EventHandler(this.OpenForm_Load);
             this.Shown += new System.EventHandler(this.OpenForm_Shown);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpenForm_Closing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CameraPictureBox)).EndInit();
@@ -138,7 +135,7 @@
         private System.Windows.Forms.PictureBox CameraPictureBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button CameraFormExitButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button LogoutButton;
     }
 }
 

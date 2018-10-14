@@ -32,56 +32,31 @@ namespace WindowsFormsApp1
             this.Height = CameraController.Instance().getVideoFormat().Height;
             this.CenterToScreen();
         }
-
-
         private void OpenForm_Shown(object sender, EventArgs e)
         {
             CameraController.Instance().StartStreaming(false,this.Location);
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void CameraFormExitButton_Click(object sender, EventArgs e)
         {
             if (wantsToExit)
             {
                 Application.Exit();
             }
-                
-
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void OpenForm_Closing(object sender, FormClosingEventArgs e)
         {
-
             CameraController.Instance().StopStreaming();
             if (wantsToExit)
             {
                 Application.Exit();
-            }
-            
+            }        
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click_2(object sender, EventArgs e)
+        private void LogoutButton_Click(object sender, EventArgs e)
         {
             LOGIN login = new LOGIN();
             wantsToExit = false;
             this.Close();
-            login.Show();
-            
+            login.Show();            
         }
     }
 }

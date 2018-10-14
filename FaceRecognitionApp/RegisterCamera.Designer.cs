@@ -43,7 +43,6 @@
             this.CameraPictureBox.Size = new System.Drawing.Size(994, 487);
             this.CameraPictureBox.TabIndex = 1;
             this.CameraPictureBox.TabStop = false;
-            this.CameraPictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // SubmitButton
             // 
@@ -63,7 +62,7 @@
             this.SubmitButton.Tag = "photo_button";
             this.SubmitButton.Text = "Take a photo";
             this.SubmitButton.UseVisualStyleBackColor = false;
-            this.SubmitButton.Click += new System.EventHandler(this.button1_Click);
+            this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
             // RegisterCamera
             // 
