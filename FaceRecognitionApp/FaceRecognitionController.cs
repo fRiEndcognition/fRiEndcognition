@@ -26,7 +26,6 @@ class FaceRecognitionController
     public long[] IDs;
     public long faceCount = 0;
     public int tracker = 0;
-    private string trackerFile = "tracker.dat";
     private string username;
     private int mouseX = 0;
     private int mouseY = 0;
@@ -40,10 +39,9 @@ class FaceRecognitionController
     public void Initialize(Point location)
     {
         tracker = 0;
-        if (FSDK.LoadTrackerMemoryFromFile(ref tracker, trackerFile) != FSDK.FSDKE_OK)
-        {
-            FSDK.CreateTracker(ref tracker);
-        }
+
+        DataController.Instance().LoadFaceData(ref tracker);
+
         int err = 0;
         FSDK.SetTrackerMultipleParameters(tracker, "HandleArbitraryRotations=false; DetermineFaceRotationAngle=false; InternalResizeWidth=300; FaceDetectionThreshold=5;", ref err);
 
@@ -53,7 +51,7 @@ class FaceRecognitionController
         formY = location.Y;
     }
 
-    public void DoLoop(FSDK.CImage image, Image frameImage, bool recogniseFacialFeatures)
+    public void Update(FSDK.CImage image, Image frameImage, bool recogniseFacialFeatures)
     {
         FSDK.FeedFrame(tracker, 0, image.ImageHandle, ref faceCount, out IDs, sizeof(long) * 256);
         Array.Resize(ref IDs, (int)faceCount);
@@ -82,6 +80,7 @@ class FaceRecognitionController
                 FSDK.GetTrackerFacialFeatures(tracker, 0, IDs[i], out facialFeatures);
                 foreach (FSDK.TPoint point in facialFeatures)
                     graphics.FillEllipse(Brushes.Blue, point.x, point.y, 5, 5);
+                
             }
             else
             {
@@ -145,10 +144,9 @@ class FaceRecognitionController
         return newRectInfo;
     }
 
-    public void SaveData()
+    public void Stop()
     {
-        FSDK.SaveTrackerMemoryToFile(tracker, trackerFile);
-        FSDK.FreeTracker(tracker);
+        DataController.Instance().SaveFaceData(tracker);
     }
 
     private void MouseOnRect(RectInfo rectInfo, ref Pen pen, int i)

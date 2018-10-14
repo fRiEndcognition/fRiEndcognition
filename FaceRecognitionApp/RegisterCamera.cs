@@ -13,13 +13,15 @@ namespace friendcognition
     public partial class RegisterCamera : Form
     {
         private string name;
+        private string surname;
 
         private bool wantsToExit = true;
 
-        public RegisterCamera(string name)
+        public RegisterCamera(string name, string surname)
         {
             InitializeComponent();
             this.name = name;
+            this.surname = surname;
         }
 
         private void RegisterCamera_Load(object sender, EventArgs e)
@@ -30,6 +32,7 @@ namespace friendcognition
             CameraPictureBox.Height = CameraController.Instance().getVideoFormat().Height;
             this.Width = CameraController.Instance().getVideoFormat().Width;
             this.Height = CameraController.Instance().getVideoFormat().Height;
+            this.CenterToScreen();
         }
 
         private void RegisterCamera_Shown(object sender, EventArgs e)

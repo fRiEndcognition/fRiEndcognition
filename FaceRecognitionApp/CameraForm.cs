@@ -30,6 +30,7 @@ namespace WindowsFormsApp1
             CameraPictureBox.Height = CameraController.Instance().getVideoFormat().Height;
             this.Width = CameraController.Instance().getVideoFormat().Width;
             this.Height = CameraController.Instance().getVideoFormat().Height;
+            this.CenterToScreen();
         }
 
 
