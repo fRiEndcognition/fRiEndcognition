@@ -9,6 +9,9 @@ class Constants
     public const string ERROR_ACTIVATING_FACESDK = "Error activating FaceSDK - please enter license key";
     public const string NO_CAMERA_ERROR = "No camera found";
     public const string CAMERA_OPEN_ERROR = "Unable to open camera";
+    public const string NO_FACE_ERROR = "Can't detect your face!";
+    public const string MULTIPLE_FACES_ERROR = "Make sure there is only one face on the screen!";
+
 
     public const string WRONG_EMAIL = "Wrong email";
     public const string WRONG_PASSWORD = "Wrong password";

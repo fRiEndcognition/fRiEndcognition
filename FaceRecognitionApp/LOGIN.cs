@@ -39,7 +39,7 @@ namespace friendcognition
             {
                 RegisterCamera registerCamera = new RegisterCamera(name, surname);
                 registerCamera.Show();
-            }          
+            }
         }
         private void RegisterExit_Click(object sender, EventArgs e)
         {

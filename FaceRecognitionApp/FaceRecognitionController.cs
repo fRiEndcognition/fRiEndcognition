@@ -56,24 +56,10 @@ class FaceRecognitionController
         FSDK.FeedFrame(tracker, 0, image.ImageHandle, ref faceCount, out IDs, sizeof(long) * 256);
         Array.Resize(ref IDs, (int)faceCount);
 
-        //Drawing rectangles
         Graphics graphics = Graphics.FromImage(frameImage);
 
         for (int i = 0; i < IDs.Length; ++i)
         {
-            FSDK.TFacePosition facePosition = new FSDK.TFacePosition();
-            FSDK.GetTrackerFacePosition(tracker, 0, IDs[i], ref facePosition);
-
-            int x = facePosition.xc - (int)(facePosition.w * 0.6);
-            int y = facePosition.yc - (int)(facePosition.w * 0.6);
-            int w = (int)(facePosition.w * 1.2);
-
-            RectInfo currentRectInfo = new RectInfo(x, y, w);
-
-            currentRectInfo = ProccessRectInfo(currentRectInfo, IDs[i]);
-
-            Pen pen = new Pen(Color.FromArgb(115, 115, 115, 115), 3);
-
             if (recogniseFacialFeatures == true)
             {
                 FSDK.TPoint[] facialFeatures;
@@ -84,6 +70,19 @@ class FaceRecognitionController
             }
             else
             {
+                FSDK.TFacePosition facePosition = new FSDK.TFacePosition();
+                FSDK.GetTrackerFacePosition(tracker, 0, IDs[i], ref facePosition);
+
+                int x = facePosition.xc - (int)(facePosition.w * 0.6);
+                int y = facePosition.yc - (int)(facePosition.w * 0.6);
+                int w = (int)(facePosition.w * 1.2);
+
+                Pen pen = new Pen(Color.FromArgb(115, 115, 115, 115), 3);
+
+                RectInfo currentRectInfo = new RectInfo(x, y, w);
+
+                currentRectInfo = ProccessRectInfo(currentRectInfo, IDs[i]);
+
                 String name;
                 int res = FSDK.GetAllNames(tracker, IDs[i], out name, 65536);
 
@@ -185,31 +184,28 @@ class FaceRecognitionController
         }
     }
 
-    private void DrawRectangles(Graphics graphics)
-    {
-        for (int i = 0; i < IDs.Length; ++i)
-        {
-            FSDK.TFacePosition facePosition = new FSDK.TFacePosition();
-            FSDK.GetTrackerFacePosition(tracker, 0, IDs[i], ref facePosition);
-
-            Console.WriteLine(IDs[i]);
-
-            int x = facePosition.xc - (int)(facePosition.w * 0.6);
-            int y = facePosition.yc - (int)(facePosition.w * 0.6);
-            int w = (int)(facePosition.w * 1.2);
-            Pen pen = new Pen(Color.FromArgb(255, 0, 0, 115), 3);
-            graphics.DrawRectangle(pen, x, y, w, w);
-        }
-    }
-
-    public void SetName(string name, FSDK.CImage image)
+    public bool Register(string name, FSDK.CImage image)
     {
         FSDK.FeedFrame(tracker, 0, image.ImageHandle, ref faceCount, out IDs, sizeof(long) * 256);
         Array.Resize(ref IDs, (int)faceCount);
-        if (FSDK.FSDKE_OK == FSDK.LockID(tracker, IDs[0]))
+        if (faceCount == 0)
         {
-            FSDK.SetName(tracker, IDs[0], name);
-            FSDK.UnlockID(tracker, IDs[0]);
+            MessageBox.Show(Constants.NO_FACE_ERROR);
+            return false;
+        }
+        else if (faceCount > 1)
+        {
+            MessageBox.Show(Constants.MULTIPLE_FACES_ERROR);
+            return false;
+        }
+        else
+        {
+            if (FSDK.FSDKE_OK == FSDK.LockID(tracker, IDs[0]))
+            {
+                FSDK.SetName(tracker, IDs[0], name);
+                FSDK.UnlockID(tracker, IDs[0]);
+            }
+            return true;
         }
     }
 
