@@ -18,23 +18,15 @@ namespace friendcognition
         {
             InitializeComponent();
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void InputTextbox_TextChanged(object sender, EventArgs e)
         {
             username = InputTextbox.Text;
         }
-
-        private void NameInput_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void InputButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
