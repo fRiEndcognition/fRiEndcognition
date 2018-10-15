@@ -51,14 +51,14 @@ namespace friendcognition
             {
                 if (CameraController.Instance().Register(name))
                 {
-                    SubmitButton.Text = "Register";
+                    SubmitButton.Text = Constants.REGISTER;
                     SubmitButton.Tag = Constants.SUBMIT_BUTTON;
                     CameraController.Instance().StopStreaming();
                 }
             }
             else
             {
-                WindowsFormsApp1.OpenForm openForm = new WindowsFormsApp1.OpenForm();
+                FaceRecognitionApp.OpenForm openForm = new FaceRecognitionApp.OpenForm();
                 wantsToExit = false;
                 this.Close();
                 openForm.Show();

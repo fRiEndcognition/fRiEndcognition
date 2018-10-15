@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace WindowsFormsApp1
+namespace FaceRecognitionApp
 {
     public partial class OpenForm : Form
     {

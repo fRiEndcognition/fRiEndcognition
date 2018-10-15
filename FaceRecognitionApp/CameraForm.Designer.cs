@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace FaceRecognitionApp
 {
     partial class OpenForm
     {
