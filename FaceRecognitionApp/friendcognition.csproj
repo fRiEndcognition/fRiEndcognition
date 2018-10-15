@@ -66,6 +66,12 @@
     <Compile Include="LOGIN.Designer.cs">
       <DependentUpon>LOGIN.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="NameInput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </Compile>
     <EmbeddedResource Include="LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NameInput.resx">
       <DependentUpon>NameInput.cs</DependentUpon>
@@ -132,6 +141,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\if_82.output_3044701 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnprev.BackgroundImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_cono_512542.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_return-back-redo-arrow_2075802.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_user_1902268.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_sign-out_298869.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_cono_5125421.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_Delete_minus_cancel_exit_remove_1886793.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_error_1646012.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
