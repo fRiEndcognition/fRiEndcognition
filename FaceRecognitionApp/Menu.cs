@@ -18,7 +18,7 @@ namespace friendcognition
         }
 
         int menu = 0;
-        private void MenuButtonPrev_Click(object sender, EventArgs e)
+        private void MenuButtonNext_Click(object sender, EventArgs e)
         {
             IdentClicks.Text = "prev";
             menu -= 1;
@@ -26,7 +26,7 @@ namespace friendcognition
 
         }
 
-        private void MenuButtonNext_Click(object sender, EventArgs e)
+        private void MenuButtonPrev_Click(object sender, EventArgs e)
         {
             IdentClicks.Text = "next";
             menu += 1;
@@ -113,14 +113,22 @@ namespace friendcognition
         private void MenuReturn_Click(object sender, EventArgs e)
         {
             this.Close();
-            CameraController.Instance().StartStreaming(false, this.Location);
         }
 
         private void MenuLogout_Click(object sender, EventArgs e)
         {
             LOGIN login = new LOGIN();
             this.Close();
+            CameraController.Instance().StopStreaming();
             login.Show();
         }
+
+        private void MenuProfile_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile();
+            this.Close();
+            profile.Show();
+        }
+
     }
 }

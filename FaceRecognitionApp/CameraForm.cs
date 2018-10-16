@@ -45,7 +45,6 @@ namespace WindowsFormsApp1
         private void LogoutButton_Click(object sender, EventArgs e)
         {
             friendcognition.Menu menu = new friendcognition.Menu();
-            CameraController.Instance().StopStreaming();
             menu.Show();
             
         }

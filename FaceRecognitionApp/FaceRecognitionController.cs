@@ -98,11 +98,26 @@ class FaceRecognitionController
                 }
                 pen = new Pen(Color.FromArgb(115, 115, 115, 115), 3);
 
-                MouseOnRect(currentRectInfo, ref pen, i);
+                if (!CheckIfOpen())
+                {
+                    MouseOnRect(currentRectInfo, ref pen, i);
+                }
 
                 graphics.DrawRectangle(pen, currentRectInfo.x, currentRectInfo.y, currentRectInfo.w, currentRectInfo.w);
             }
         }
+    }
+
+    private Boolean CheckIfOpen()
+    {
+        FormCollection open = Application.OpenForms;
+
+        foreach (Form form in open)
+        {
+            if (form.Name == "Menu" || form.Name == "Profile")
+                return true;
+        }
+        return false;
     }
 
     private RectInfo ProccessRectInfo(RectInfo currentRectInfo, long ID)

@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.SpreadPanel = new System.Windows.Forms.Panel();
             this.IdentClicks = new System.Windows.Forms.Label();
-            this.timerPrev = new System.Windows.Forms.Timer(this.components);
-            this.timerNext = new System.Windows.Forms.Timer(this.components);
             this.MenuReturn = new System.Windows.Forms.PictureBox();
             this.UnderConstruction = new System.Windows.Forms.PictureBox();
             this.MenuProfile = new System.Windows.Forms.PictureBox();
             this.UnderConstruction2 = new System.Windows.Forms.PictureBox();
             this.MenuLogout = new System.Windows.Forms.PictureBox();
+            this.timerPrev = new System.Windows.Forms.Timer(this.components);
+            this.timerNext = new System.Windows.Forms.Timer(this.components);
             this.MenuButtonNext = new System.Windows.Forms.PictureBox();
             this.MenuButtonPrev = new System.Windows.Forms.PictureBox();
             this.SpreadPanel.SuspendLayout();
@@ -75,20 +75,11 @@
             this.IdentClicks.TabIndex = 10;
             this.IdentClicks.Visible = false;
             // 
-            // timerPrev
-            // 
-            this.timerPrev.Interval = 1;
-            this.timerPrev.Tick += new System.EventHandler(this.timerPrev_Tick);
-            // 
-            // timerNext
-            // 
-            this.timerNext.Interval = 1;
-            this.timerNext.Tick += new System.EventHandler(this.timerNext_Tick);
-            // 
             // MenuReturn
             // 
             this.MenuReturn.BackgroundImage = global::friendcognition.Properties.Resources.if_error_1646012;
             this.MenuReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MenuReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MenuReturn.Location = new System.Drawing.Point(684, 22);
             this.MenuReturn.Margin = new System.Windows.Forms.Padding(4);
             this.MenuReturn.Name = "MenuReturn";
@@ -101,6 +92,7 @@
             // 
             this.UnderConstruction.BackgroundImage = global::friendcognition.Properties.Resources.if_cono_512542;
             this.UnderConstruction.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UnderConstruction.Cursor = System.Windows.Forms.Cursors.No;
             this.UnderConstruction.Location = new System.Drawing.Point(895, 22);
             this.UnderConstruction.Margin = new System.Windows.Forms.Padding(4);
             this.UnderConstruction.Name = "UnderConstruction";
@@ -112,17 +104,20 @@
             // 
             this.MenuProfile.BackgroundImage = global::friendcognition.Properties.Resources.if_user_1902268;
             this.MenuProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MenuProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MenuProfile.Location = new System.Drawing.Point(465, 22);
             this.MenuProfile.Margin = new System.Windows.Forms.Padding(4);
             this.MenuProfile.Name = "MenuProfile";
             this.MenuProfile.Size = new System.Drawing.Size(133, 127);
             this.MenuProfile.TabIndex = 1;
             this.MenuProfile.TabStop = false;
+            this.MenuProfile.Click += new System.EventHandler(this.MenuProfile_Click);
             // 
             // UnderConstruction2
             // 
             this.UnderConstruction2.BackgroundImage = global::friendcognition.Properties.Resources.if_cono_5125421;
             this.UnderConstruction2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UnderConstruction2.Cursor = System.Windows.Forms.Cursors.No;
             this.UnderConstruction2.Location = new System.Drawing.Point(28, 22);
             this.UnderConstruction2.Margin = new System.Windows.Forms.Padding(4);
             this.UnderConstruction2.Name = "UnderConstruction2";
@@ -134,6 +129,7 @@
             // 
             this.MenuLogout.BackgroundImage = global::friendcognition.Properties.Resources.if_sign_out_298869;
             this.MenuLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MenuLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MenuLogout.Location = new System.Drawing.Point(248, 22);
             this.MenuLogout.Margin = new System.Windows.Forms.Padding(4);
             this.MenuLogout.Name = "MenuLogout";
@@ -141,6 +137,16 @@
             this.MenuLogout.TabIndex = 2;
             this.MenuLogout.TabStop = false;
             this.MenuLogout.Click += new System.EventHandler(this.MenuLogout_Click);
+            // 
+            // timerPrev
+            // 
+            this.timerPrev.Interval = 1;
+            this.timerPrev.Tick += new System.EventHandler(this.timerPrev_Tick);
+            // 
+            // timerNext
+            // 
+            this.timerNext.Interval = 1;
+            this.timerNext.Tick += new System.EventHandler(this.timerNext_Tick);
             // 
             // MenuButtonNext
             // 

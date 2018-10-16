@@ -45,8 +45,9 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.Color.LightGray;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(994, 56);
+            this.panel1.Size = new System.Drawing.Size(884, 45);
             this.panel1.TabIndex = 2;
             // 
             // LogoutButton
@@ -61,11 +62,11 @@
             this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogoutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.LogoutButton.ForeColor = System.Drawing.Color.Transparent;
-            this.LogoutButton.Image = global::friendcognition.Properties.Resources.if_82_output_3044701__1_;
+            this.LogoutButton.Image = global::friendcognition.Properties.Resources.if_dot_more_menu_hide_2205199;
             this.LogoutButton.Location = new System.Drawing.Point(3, 2);
             this.LogoutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(33, 30);
+            this.LogoutButton.Size = new System.Drawing.Size(38, 33);
             this.LogoutButton.TabIndex = 1;
             this.LogoutButton.Tag = "exit_button";
             this.LogoutButton.UseVisualStyleBackColor = false;
@@ -85,10 +86,10 @@
             this.CameraFormExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.CameraFormExitButton.ForeColor = System.Drawing.Color.Transparent;
             this.CameraFormExitButton.Image = global::friendcognition.Properties.Resources.if_85_remove_3044710__1_;
-            this.CameraFormExitButton.Location = new System.Drawing.Point(958, 2);
+            this.CameraFormExitButton.Location = new System.Drawing.Point(851, 2);
             this.CameraFormExitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CameraFormExitButton.Name = "CameraFormExitButton";
-            this.CameraFormExitButton.Size = new System.Drawing.Size(33, 30);
+            this.CameraFormExitButton.Size = new System.Drawing.Size(30, 30);
             this.CameraFormExitButton.TabIndex = 0;
             this.CameraFormExitButton.Tag = "exit_button";
             this.CameraFormExitButton.UseVisualStyleBackColor = false;
@@ -101,16 +102,16 @@
             this.CameraPictureBox.Location = new System.Drawing.Point(0, 0);
             this.CameraPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CameraPictureBox.Name = "CameraPictureBox";
-            this.CameraPictureBox.Size = new System.Drawing.Size(994, 536);
+            this.CameraPictureBox.Size = new System.Drawing.Size(884, 429);
             this.CameraPictureBox.TabIndex = 1;
             this.CameraPictureBox.TabStop = false;
             // 
             // OpenForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(994, 536);
+            this.ClientSize = new System.Drawing.Size(884, 429);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.CameraPictureBox);

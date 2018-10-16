@@ -83,6 +83,16 @@ namespace friendcognition.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_45_Menu_106200 {
+            get {
+                object obj = ResourceManager.GetObject("if_45_Menu_106200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_82_output_3044701__1_ {
             get {
                 object obj = ResourceManager.GetObject("if_82.output_3044701 (1)", resourceCulture);
@@ -143,9 +153,39 @@ namespace friendcognition.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_detail_information_menu_data_2075825 {
+            get {
+                object obj = ResourceManager.GetObject("if_detail-information-menu-data_2075825", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_dot_more_menu_hide_2205199 {
+            get {
+                object obj = ResourceManager.GetObject("if_dot-more-menu-hide_2205199", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_error_1646012 {
             get {
                 object obj = ResourceManager.GetObject("if_error_1646012", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_profile_alt_4_299106 {
+            get {
+                object obj = ResourceManager.GetObject("if_profile-alt-4_299106", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
