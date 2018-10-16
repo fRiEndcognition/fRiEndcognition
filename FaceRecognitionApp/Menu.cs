@@ -117,9 +117,9 @@ namespace friendcognition
 
         private void MenuLogout_Click(object sender, EventArgs e)
         {
+            Application.OpenForms["OpenForm"].Close();
             LOGIN login = new LOGIN();
             this.Close();
-            CameraController.Instance().StopStreaming();
             login.Show();
         }
 

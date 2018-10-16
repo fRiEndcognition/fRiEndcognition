@@ -40,7 +40,6 @@ namespace WindowsFormsApp1
         private void OpenForm_Closing(object sender, FormClosingEventArgs e)
         {
                 CameraController.Instance().StopStreaming();
-                Application.Exit();
         }
         private void LogoutButton_Click(object sender, EventArgs e)
         {
