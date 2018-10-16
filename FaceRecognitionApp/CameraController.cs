@@ -97,13 +97,13 @@ class CameraController
         currentPictureBox = pictureBox;
     }
 
-    public void SetName(string name)
+    public bool Register(string name)
     {
-        Application.DoEvents();
         Int32 imageHandle = 0;
         FSDKCam.GrabFrame(cameraHandle, ref imageHandle);
         FSDK.CImage image = new FSDK.CImage(imageHandle);
-        faceRecognitionController.SetName(name, image);
+        Application.DoEvents();
+        return faceRecognitionController.Register(name, image);
     }
 
     public static CameraController Instance()

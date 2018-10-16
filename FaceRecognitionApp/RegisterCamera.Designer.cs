@@ -40,7 +40,7 @@
             this.CameraPictureBox.Location = new System.Drawing.Point(0, 0);
             this.CameraPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CameraPictureBox.Name = "CameraPictureBox";
-            this.CameraPictureBox.Size = new System.Drawing.Size(994, 487);
+            this.CameraPictureBox.Size = new System.Drawing.Size(884, 390);
             this.CameraPictureBox.TabIndex = 1;
             this.CameraPictureBox.TabStop = false;
             // 
@@ -54,10 +54,10 @@
             this.SubmitButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.SubmitButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SubmitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.SubmitButton.Location = new System.Drawing.Point(0, 487);
+            this.SubmitButton.Location = new System.Drawing.Point(0, 390);
             this.SubmitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(994, 49);
+            this.SubmitButton.Size = new System.Drawing.Size(884, 39);
             this.SubmitButton.TabIndex = 0;
             this.SubmitButton.Tag = "photo_button";
             this.SubmitButton.Text = "Take a photo";
@@ -66,10 +66,10 @@
             // 
             // RegisterCamera
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(994, 536);
+            this.ClientSize = new System.Drawing.Size(884, 429);
             this.ControlBox = false;
             this.Controls.Add(this.CameraPictureBox);
             this.Controls.Add(this.SubmitButton);
@@ -81,10 +81,9 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "fRiEndcognition";
-            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
-            this.Load += new System.EventHandler(this.RegisterCamera_Load);
             this.Shown += new System.EventHandler(this.RegisterCamera_Shown);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RegisterCamera_Closing);
+            this.Load += new System.EventHandler(this.RegisterCamera_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CameraPictureBox)).EndInit();
             this.ResumeLayout(false);
 

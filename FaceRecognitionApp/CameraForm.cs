@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace WindowsFormsApp1
+namespace FaceRecognitionApp
 {
     public partial class OpenForm : Form
     {
@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             this.Height = CameraController.Instance().getVideoFormat().Height;
             this.CenterToScreen();
         }
-        private void OpenForm_Shown(object sender, EventArgs e)
+        private void OpenForm_Activated(object sender, EventArgs e)
         {
             CameraController.Instance().StartStreaming(false,this.Location);
         }

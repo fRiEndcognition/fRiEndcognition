@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace FaceRecognitionApp
 {
     partial class OpenForm
     {
@@ -123,7 +123,7 @@
             this.Text = "fRiEndcognition";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpenForm_Closing);
             this.Load += new System.EventHandler(this.OpenForm_Load);
-            this.Shown += new System.EventHandler(this.OpenForm_Shown);
+            this.Activated += new System.EventHandler(this.OpenForm_Activated);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CameraPictureBox)).EndInit();

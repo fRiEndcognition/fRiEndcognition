@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1;
+using FaceRecognitionApp;
 
 namespace friendcognition
 {
@@ -39,7 +39,7 @@ namespace friendcognition
             {
                 RegisterCamera registerCamera = new RegisterCamera(name, surname);
                 registerCamera.Show();
-            }          
+            }
         }
         private void RegisterExit_Click(object sender, EventArgs e)
         {

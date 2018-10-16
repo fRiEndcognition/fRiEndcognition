@@ -49,17 +49,19 @@ namespace friendcognition
         {
             if (SubmitButton.Tag.Equals(Constants.PHOTO_BUTTON))
             {
-                CameraController.Instance().SetName(name);
-                SubmitButton.Text = "Register";
-                SubmitButton.Tag = Constants.SUBMIT_BUTTON;
-                CameraController.Instance().StopStreaming();
+                if (CameraController.Instance().Register(name))
+                {
+                    SubmitButton.Text = Constants.REGISTER;
+                    SubmitButton.Tag = Constants.SUBMIT_BUTTON;
+                    CameraController.Instance().StopStreaming();
+                }
             }
             else
             {
-                WindowsFormsApp1.OpenForm openForm = new WindowsFormsApp1.OpenForm();
-                openForm.Show();
+                FaceRecognitionApp.OpenForm openForm = new FaceRecognitionApp.OpenForm();
                 wantsToExit = false;
                 this.Close();
+                openForm.Show();
             }
         }
     }
