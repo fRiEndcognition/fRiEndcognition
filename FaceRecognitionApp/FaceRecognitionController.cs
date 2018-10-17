@@ -114,7 +114,7 @@ class FaceRecognitionController
 
         foreach (Form form in open)
         {
-            if (form.Name == "Menu" || form.Name == "Profile")
+            if (form.Name == Constants.MENU || form.Name == Constants.PROFILE)
                 return true;
         }
         return false;
