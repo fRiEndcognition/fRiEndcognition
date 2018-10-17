@@ -14,9 +14,6 @@ namespace FaceRecognitionApp
 {
     public partial class OpenForm : Form
     {
-
-        private bool wantsToExit = true;
-
         public OpenForm()
         {
             InitializeComponent();
@@ -38,25 +35,17 @@ namespace FaceRecognitionApp
         }
         private void CameraFormExitButton_Click(object sender, EventArgs e)
         {
-            if (wantsToExit)
-            {
                 Application.Exit();
-            }
         }
         private void OpenForm_Closing(object sender, FormClosingEventArgs e)
         {
-            CameraController.Instance().StopStreaming();
-            if (wantsToExit)
-            {
-                Application.Exit();
-            }        
+                CameraController.Instance().StopStreaming();
         }
         private void LogoutButton_Click(object sender, EventArgs e)
         {
-            LOGIN login = new LOGIN();
-            wantsToExit = false;
-            this.Close();
-            login.Show();            
+            friendcognition.Menu menu = new friendcognition.Menu();
+            menu.Show();
+            
         }
     }
 }

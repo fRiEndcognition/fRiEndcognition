@@ -63,9 +63,29 @@ namespace friendcognition.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnprev_BackgroundImage {
+            get {
+                object obj = ResourceManager.GetObject("btnprev.BackgroundImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_512 {
             get {
                 object obj = ResourceManager.GetObject("close-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_45_Menu_106200 {
+            get {
+                object obj = ResourceManager.GetObject("if_45_Menu_106200", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +116,106 @@ namespace friendcognition.Properties {
         internal static System.Drawing.Bitmap if_85_remove_3044710__1_ {
             get {
                 object obj = ResourceManager.GetObject("if_85.remove_3044710 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_cono_512542 {
+            get {
+                object obj = ResourceManager.GetObject("if_cono_512542", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_cono_5125421 {
+            get {
+                object obj = ResourceManager.GetObject("if_cono_5125421", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_Delete_minus_cancel_exit_remove_1886793 {
+            get {
+                object obj = ResourceManager.GetObject("if_Delete_minus_cancel_exit_remove_1886793", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_detail_information_menu_data_2075825 {
+            get {
+                object obj = ResourceManager.GetObject("if_detail-information-menu-data_2075825", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_dot_more_menu_hide_2205199 {
+            get {
+                object obj = ResourceManager.GetObject("if_dot-more-menu-hide_2205199", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_error_1646012 {
+            get {
+                object obj = ResourceManager.GetObject("if_error_1646012", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_profile_alt_4_299106 {
+            get {
+                object obj = ResourceManager.GetObject("if_profile-alt-4_299106", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_return_back_redo_arrow_2075802 {
+            get {
+                object obj = ResourceManager.GetObject("if_return-back-redo-arrow_2075802", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_sign_out_298869 {
+            get {
+                object obj = ResourceManager.GetObject("if_sign-out_298869", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_user_1902268 {
+            get {
+                object obj = ResourceManager.GetObject("if_user_1902268", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

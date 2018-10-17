@@ -21,6 +21,8 @@ class Constants
 
     public const string EMAIL_ALREADY_EXISTS = "Such email already exists";
 
+    public const string MENU = "Menu";
+    public const string PROFILE = "Profile";
     // Regex
 
     public const string REGEX_ONLY_LETTERS = @"^[a-zA-Z]+$";
