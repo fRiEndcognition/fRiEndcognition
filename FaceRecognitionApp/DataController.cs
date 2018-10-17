@@ -1,6 +1,8 @@
 ﻿using Luxand;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -24,6 +26,37 @@ class DataController
             instance.InitializeLoginInfo();
         }
         return instance;
+    }
+
+    public static DataTable ExecSP(string spName, List<SqlParameter> sqlParams = null) 
+    {
+        string connectionString = "Server=tcp:friendcognition.database.windows.net,1433;Initial Catalog=Database;Persist Security Info=False;User ID=gravus;Password=Saldytuvas1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        SqlConnection cnn = new SqlConnection();
+        DataTable dt = new DataTable();
+
+        try
+        {
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+
+            SqlCommand cmd = new SqlCommand(spName, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddRange(sqlParams.ToArray());
+
+            SqlCommand command = cnn.CreateCommand();
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            dt.Load(dr);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            cnn.Close();
+        }
+        return dt;
     }
 
     private void InitializeLoginInfo()
