@@ -30,7 +30,7 @@ class DataController
 
     public static DataTable ExecSP(string spName, List<SqlParameter> sqlParams = null) 
     {
-        string connectionString = "Server=tcp:friendcognition.database.windows.net,1433;Initial Catalog=Database;Persist Security Info=False;User ID=gravus;Password=Saldytuvas1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        string connectionString = Constants.DATABASE;
         SqlConnection cnn = new SqlConnection();
         DataTable dt = new DataTable();
 

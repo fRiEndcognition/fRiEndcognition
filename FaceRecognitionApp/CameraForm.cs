@@ -35,11 +35,11 @@ namespace FaceRecognitionApp
         }
         private void CameraFormExitButton_Click(object sender, EventArgs e)
         {
-                Application.Exit();
+             Application.Exit();
         }
         private void OpenForm_Closing(object sender, FormClosingEventArgs e)
         {
-                CameraController.Instance().StopStreaming();
+             CameraController.Instance().StopStreaming();
         }
         private void LogoutButton_Click(object sender, EventArgs e)
         {
