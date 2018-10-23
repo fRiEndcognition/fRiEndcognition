@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -18,6 +21,8 @@ class DataController
 
     private string trackerFile = "tracker.dat";
 
+    private int id;
+
     public static DataController Instance()
     {
         if (instance == null)
@@ -28,7 +33,7 @@ class DataController
         return instance;
     }
 
-    public static DataTable ExecSP(string spName, List<SqlParameter> sqlParams = null) 
+    public DataTable ExecSP(string spName, List<SqlParameter> sqlParams = null) 
     {
         string connectionString = Constants.DATABASE;
         SqlConnection cnn = new SqlConnection();
@@ -57,6 +62,25 @@ class DataController
             cnn.Close();
         }
         return dt;
+    }
+
+    public int getId()
+    {
+        return id;
+    }
+
+    public void setId(int id)
+    {
+        this.id = id;
+    }
+
+    public byte[] ConvertImageToByteArray(Image image)
+    {
+        using (var ms = new MemoryStream())
+        {
+            image.Save(ms, ImageFormat.Jpeg);
+            return ms.ToArray();
+        }
     }
 
     private void InitializeLoginInfo()

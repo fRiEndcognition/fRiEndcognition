@@ -122,7 +122,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "fRiEndcognition";
-            this.Shown += new System.EventHandler(this.OpenForm_Activated);
+            this.Shown += new System.EventHandler(this.OpenForm_Shown);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OpenForm_Closing);
             this.Load += new System.EventHandler(this.OpenForm_Load);
             this.panel1.ResumeLayout(false);

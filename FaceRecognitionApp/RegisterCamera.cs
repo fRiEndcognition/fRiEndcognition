@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,16 +13,16 @@ namespace friendcognition
 {
     public partial class RegisterCamera : Form
     {
-        private string name;
-        private string surname;
+        private string email;
+        private string password;
 
         private bool wantsToExit = true;
 
-        public RegisterCamera(string name, string surname)
+        public RegisterCamera(string email, string password)
         {
             InitializeComponent();
-            this.name = name;
-            this.surname = surname;
+            this.email = email;
+            this.password = password;
         }
         private void RegisterCamera_Load(object sender, EventArgs e)
         {
@@ -47,9 +48,15 @@ namespace friendcognition
         }
         private void SubmitButton_Click(object sender, EventArgs e)
         {
+            List<SqlParameter> sqlParams = new List<SqlParameter>();
+            sqlParams.Add(new SqlParameter("Email", email));
+            sqlParams.Add(new SqlParameter("Password", password));
+
+            DataTable dt = DataController.Instance().ExecSP("Login", sqlParams);
+
             if (SubmitButton.Tag.Equals(Constants.PHOTO_BUTTON))
             {
-                if (CameraController.Instance().Register(name))
+                if (CameraController.Instance().Register(dt))
                 {
                     SubmitButton.Text = Constants.REGISTER;
                     SubmitButton.Tag = Constants.SUBMIT_BUTTON;
@@ -58,9 +65,10 @@ namespace friendcognition
             }
             else
             {
-                FaceRecognitionApp.OpenForm openForm = new FaceRecognitionApp.OpenForm();
                 wantsToExit = false;
                 this.Close();
+                DataController.Instance().setId(Convert.ToInt32(dt.Rows[0]["Id"]));
+                FaceRecognitionApp.OpenForm openForm = new FaceRecognitionApp.OpenForm();
                 openForm.Show();
             }
         }

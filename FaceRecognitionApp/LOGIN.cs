@@ -42,12 +42,13 @@ namespace friendcognition
             sqlParams.Add(new SqlParameter("Email", email));
             sqlParams.Add(new SqlParameter("Password", password));
 
-            DataTable dt = DataController.ExecSP("Register", sqlParams);
+            DataController.Instance().ExecSP("Register", sqlParams);
 
             if (DataController.Instance().Register(name, surname, email, password))
             {
-                RegisterCamera registerCamera = new RegisterCamera(name, surname);
+                RegisterCamera registerCamera = new RegisterCamera(email,password);
                 registerCamera.Show();
+                this.Hide();
             }
         }
         private void RegisterExit_Click(object sender, EventArgs e)
@@ -71,19 +72,15 @@ namespace friendcognition
             sqlParams.Add(new SqlParameter("Email", email));
             sqlParams.Add(new SqlParameter("Password", password));
 
-            DataTable dt = DataController.ExecSP("Login", sqlParams);
+            DataTable dt = DataController.Instance().ExecSP("Login", sqlParams);
 
             if (dt.Rows.Count == 1)
             {
+                DataController.Instance().setId(Convert.ToInt32(dt.Rows[0]["Id"]));
                 OpenForm openForm = new OpenForm();
                 openForm.Show();
-            }
-
-            /*if (DataController.Instance().Login(email, password))
-            {
-                OpenForm openForm = new OpenForm();
-                openForm.Show();
-            }  */         
+                this.Hide();
+            }        
         }
         private void LoginExitButton_Click(object sender, EventArgs e)
         {
