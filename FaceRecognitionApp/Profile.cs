@@ -54,7 +54,19 @@ namespace friendcognition
         }
         private void PictureButton_Click(object sender, EventArgs e)
         {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "jpeg files (*.jpg)|*.jpg|png files (*.png)|*.png";
 
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var img = Bitmap.FromStream(fileDialog.OpenFile());
+
+                List<SqlParameter> sqlParams = new List<SqlParameter>();
+                sqlParams.Add(new SqlParameter("Image", DataController.Instance().ConvertImageToByteArray(img)));
+                sqlParams.Add(new SqlParameter("Id", id));
+                DataController.Instance().ExecSP("StoreImage", sqlParams);
+                ProfilePicture.Image = img;
+            }
         }
     }
 }
