@@ -40,26 +40,25 @@ namespace friendcognition
             this.Close();
         }
 
+
+
         private void Profile_Load(object sender, EventArgs e)
         {
             DataContextDataContext dt = new DataContextDataContext();
 
-           // var Image = from User in dt.GetTable<User>()
-                     //  where User.Id == id
-                     //  select User.Image.FromStream(new MemoryStream(User.toArray()));
-           // ProfilePicture.Image = Image;
-            var Name = from User in dt.GetTable<User>()
-                       where User.Id == id
-                       select User.Name;
-            ProfileName.Text = Name.ToString();
-            var Surname = from User in dt.GetTable<User>()
-                       where User.Id == id
-                       select User.Surname;
-            ProfileSurname.Text = Surname.ToString();
-            var Email = from User in dt.GetTable<User>()
-                       where User.Id == id
-                       select User.Email;
-            ProfileEmail.Text = Email.ToString();
+            var image = (from User in dt.GetTable<User>()
+                        where User.Id == id
+                        select User.Image.ToArray()).FirstOrDefault();
+            ProfilePicture.Image = Image.FromStream(new MemoryStream(image));
+            ProfileName.Text = (from User in dt.GetTable<User>()
+                                where User.Id == id
+                                select User.Name).First().ToString();
+            ProfileSurname.Text = (from User in dt.GetTable<User>()
+                                   where User.Id == id
+                                   select User.Surname).First().ToString();
+            ProfileEmail.Text = (from User in dt.GetTable<User>()
+                                 where User.Id == id
+                                 select User.Email).First().ToString();
             
         }
         private void PictureButton_Click(object sender, EventArgs e)
