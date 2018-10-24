@@ -46,31 +46,39 @@ namespace friendcognition
                 Application.Exit();
             }
         }
-        private void SubmitButton_Click(object sender, EventArgs e)
+        private DataTable getDatable()
         {
             List<SqlParameter> sqlParams = new List<SqlParameter>();
             sqlParams.Add(new SqlParameter("Email", email));
             sqlParams.Add(new SqlParameter("Password", password));
 
-            DataTable dt = DataController.Instance().ExecSP("Login", sqlParams);
+            return DataController.Instance().ExecSP("Login", sqlParams);
+        }
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            var dt = getDatable();
 
-            if (SubmitButton.Tag.Equals(Constants.PHOTO_BUTTON))
+            if (CameraController.Instance().Register(dt))
             {
-                if (CameraController.Instance().Register(dt))
-                {
-                    SubmitButton.Text = Constants.REGISTER;
-                    SubmitButton.Tag = Constants.SUBMIT_BUTTON;
-                    CameraController.Instance().StopStreaming();
-                }
+                SubmitButton.Visible = false;
+                CameraController.Instance().StopStreaming();
             }
-            else
-            {
-                wantsToExit = false;
-                this.Close();
-                DataController.Instance().setId(Convert.ToInt32(dt.Rows[0]["Id"]));
-                FaceRecognitionApp.OpenForm openForm = new FaceRecognitionApp.OpenForm();
-                openForm.Show();
-            }
+        }
+
+        private void RegisterCameraRetakeButton_Click(object sender, EventArgs e)
+        {
+            SubmitButton.Visible = true;
+            CameraController.Instance().StartStreaming(true, this.Location);
+        }
+
+        private void RegisterCameraRegisterButton_Click(object sender, EventArgs e)
+        {
+            var dt = getDatable();
+            wantsToExit = false;
+            this.Close();
+            DataController.Instance().setId(Convert.ToInt32(dt.Rows[0]["Id"]));
+            FaceRecognitionApp.OpenForm openForm = new FaceRecognitionApp.OpenForm();
+            openForm.Show();
         }
     }
 }
