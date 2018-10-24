@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-class DataController
+public class DataController
 {
 
     private Dictionary<string, string> loginInfo;
@@ -151,7 +151,7 @@ class DataController
 
     }
 
-    private bool ValidateEmail(string email)
+    public bool ValidateEmail(string email)
     {
         if (Regex.IsMatch(email, Constants.REGEX_EMAIL))
         {
@@ -163,7 +163,7 @@ class DataController
         }
     }
 
-    private bool ValidateStringOnlyLetters(string input)
+    public bool ValidateStringOnlyLetters(string input)
     {
         if (Regex.IsMatch(input, Constants.REGEX_ONLY_LETTERS))
         {
