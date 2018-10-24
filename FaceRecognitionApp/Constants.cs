@@ -36,6 +36,7 @@ class Constants
 
     //Don't forget to add the license file to bin/debug----------------------->
     public static readonly string LICENCE_KEY= System.IO.File.ReadAllText(@".\LICENSE.txt");
+    public static readonly string DATABASE = System.IO.File.ReadAllText(@".\DATABASE.txt");
 
 }
 

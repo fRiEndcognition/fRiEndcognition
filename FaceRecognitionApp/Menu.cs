@@ -105,11 +105,6 @@ namespace friendcognition
 
         }
 
-        private void Menu_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void MenuReturn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -117,16 +112,16 @@ namespace friendcognition
 
         private void MenuLogout_Click(object sender, EventArgs e)
         {
+            this.Close();
             Application.OpenForms["OpenForm"].Close();
             LOGIN login = new LOGIN();
-            this.Close();
             login.Show();
         }
 
         private void MenuProfile_Click(object sender, EventArgs e)
         {
-            Profile profile = new Profile();
             this.Close();
+            Profile profile = new Profile();
             profile.Show();
         }
 

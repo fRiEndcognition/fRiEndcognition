@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -97,13 +99,20 @@ class CameraController
         currentPictureBox = pictureBox;
     }
 
-    public bool Register(string name)
+    public bool Register(DataTable dt)
     {
         Int32 imageHandle = 0;
         FSDKCam.GrabFrame(cameraHandle, ref imageHandle);
         FSDK.CImage image = new FSDK.CImage(imageHandle);
+        Image frameImage = image.ToCLRImage();
         Application.DoEvents();
-        return faceRecognitionController.Register(name, image);
+
+        List<SqlParameter> sqlParams = new List<SqlParameter>();
+        sqlParams.Add(new SqlParameter("Image", DataController.Instance().ConvertImageToByteArray(frameImage)));
+        sqlParams.Add(new SqlParameter("Id", dt.Rows[0]["Id"]));
+        DataController.Instance().ExecSP("StoreImage", sqlParams);
+
+        return faceRecognitionController.Register(image, dt);
     }
 
     public static CameraController Instance()

@@ -189,7 +189,6 @@
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
-            this.Load += new System.EventHandler(this.Menu_Load);
             this.SpreadPanel.ResumeLayout(false);
             this.SpreadPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MenuReturn)).EndInit();

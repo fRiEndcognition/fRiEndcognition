@@ -1,6 +1,11 @@
 ﻿using Luxand;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -16,6 +21,8 @@ class DataController
 
     private string trackerFile = "tracker.dat";
 
+    private int id;
+
     public static DataController Instance()
     {
         if (instance == null)
@@ -24,6 +31,56 @@ class DataController
             instance.InitializeLoginInfo();
         }
         return instance;
+    }
+
+    public DataTable ExecSP(string spName, List<SqlParameter> sqlParams = null) 
+    {
+        string connectionString = Constants.DATABASE;
+        SqlConnection cnn = new SqlConnection();
+        DataTable dt = new DataTable();
+
+        try
+        {
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+
+            SqlCommand cmd = new SqlCommand(spName, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddRange(sqlParams.ToArray());
+
+            SqlCommand command = cnn.CreateCommand();
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            dt.Load(dr);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            cnn.Close();
+        }
+        return dt;
+    }
+
+    public int getId()
+    {
+        return id;
+    }
+
+    public void setId(int id)
+    {
+        this.id = id;
+    }
+
+    public byte[] ConvertImageToByteArray(Image image)
+    {
+        using (var ms = new MemoryStream())
+        {
+            image.Save(ms, ImageFormat.Jpeg);
+            return ms.ToArray();
+        }
     }
 
     private void InitializeLoginInfo()

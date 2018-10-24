@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             this.ProfileEmailLabel = new System.Windows.Forms.Label();
-            this.ProfileAgeLabel = new System.Windows.Forms.Label();
+            this.ProfileSurnameLabel = new System.Windows.Forms.Label();
             this.ProfileNameLabel = new System.Windows.Forms.Label();
             this.ProfileMessageButton = new System.Windows.Forms.Button();
             this.CameraFormExitButton = new System.Windows.Forms.Button();
             this.ProfilePicture = new System.Windows.Forms.PictureBox();
+            this.ProfileName = new System.Windows.Forms.Label();
+            this.ProfileSurname = new System.Windows.Forms.Label();
+            this.ProfileEmail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,29 +50,31 @@
             this.ProfileEmailLabel.TabIndex = 1;
             this.ProfileEmailLabel.Text = "Email:";
             // 
-            // ProfileAgeLabel
+            // ProfileSurnameLabel
             // 
-            this.ProfileAgeLabel.AutoSize = true;
-            this.ProfileAgeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ProfileAgeLabel.Location = new System.Drawing.Point(12, 231);
-            this.ProfileAgeLabel.Name = "ProfileAgeLabel";
-            this.ProfileAgeLabel.Size = new System.Drawing.Size(37, 17);
-            this.ProfileAgeLabel.TabIndex = 2;
-            this.ProfileAgeLabel.Text = "Age:";
+            this.ProfileSurnameLabel.AutoSize = true;
+            this.ProfileSurnameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ProfileSurnameLabel.Location = new System.Drawing.Point(12, 231);
+            this.ProfileSurnameLabel.Name = "ProfileSurnameLabel";
+            this.ProfileSurnameLabel.Size = new System.Drawing.Size(69, 17);
+            this.ProfileSurnameLabel.TabIndex = 2;
+            this.ProfileSurnameLabel.Text = "Surname:";
+            this.ProfileSurnameLabel.Click += new System.EventHandler(this.ProfileAgeLabel_Click);
             // 
             // ProfileNameLabel
             // 
             this.ProfileNameLabel.AutoSize = true;
-            this.ProfileNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProfileNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.ProfileNameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ProfileNameLabel.Location = new System.Drawing.Point(47, 199);
+            this.ProfileNameLabel.Location = new System.Drawing.Point(12, 195);
             this.ProfileNameLabel.Name = "ProfileNameLabel";
-            this.ProfileNameLabel.Size = new System.Drawing.Size(57, 18);
+            this.ProfileNameLabel.Size = new System.Drawing.Size(49, 17);
             this.ProfileNameLabel.TabIndex = 3;
             this.ProfileNameLabel.Text = "Name:";
             // 
             // ProfileMessageButton
             // 
+            this.ProfileMessageButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ProfileMessageButton.BackColor = System.Drawing.Color.DarkOrange;
             this.ProfileMessageButton.Cursor = System.Windows.Forms.Cursors.No;
             this.ProfileMessageButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -107,13 +112,45 @@
             // 
             // ProfilePicture
             // 
+            this.ProfilePicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.ProfilePicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ProfilePicture.Image = global::friendcognition.Properties.Resources.if_profile_alt_4_299106;
             this.ProfilePicture.Location = new System.Drawing.Point(60, 60);
             this.ProfilePicture.Name = "ProfilePicture";
             this.ProfilePicture.Size = new System.Drawing.Size(130, 132);
+            this.ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ProfilePicture.TabIndex = 0;
             this.ProfilePicture.TabStop = false;
+            // 
+            // ProfileName
+            // 
+            this.ProfileName.AutoSize = true;
+            this.ProfileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.ProfileName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ProfileName.Location = new System.Drawing.Point(91, 195);
+            this.ProfileName.Name = "ProfileName";
+            this.ProfileName.Size = new System.Drawing.Size(0, 17);
+            this.ProfileName.TabIndex = 6;
+            // 
+            // ProfileSurname
+            // 
+            this.ProfileSurname.AutoSize = true;
+            this.ProfileSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.ProfileSurname.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ProfileSurname.Location = new System.Drawing.Point(91, 231);
+            this.ProfileSurname.Name = "ProfileSurname";
+            this.ProfileSurname.Size = new System.Drawing.Size(0, 17);
+            this.ProfileSurname.TabIndex = 7;
+            // 
+            // ProfileEmail
+            // 
+            this.ProfileEmail.AutoSize = true;
+            this.ProfileEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.ProfileEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ProfileEmail.Location = new System.Drawing.Point(91, 265);
+            this.ProfileEmail.Name = "ProfileEmail";
+            this.ProfileEmail.Size = new System.Drawing.Size(0, 17);
+            this.ProfileEmail.TabIndex = 8;
             // 
             // Profile
             // 
@@ -121,10 +158,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(108)))));
             this.ClientSize = new System.Drawing.Size(250, 350);
+            this.Controls.Add(this.ProfileEmail);
+            this.Controls.Add(this.ProfileSurname);
+            this.Controls.Add(this.ProfileName);
             this.Controls.Add(this.CameraFormExitButton);
             this.Controls.Add(this.ProfileMessageButton);
             this.Controls.Add(this.ProfileNameLabel);
-            this.Controls.Add(this.ProfileAgeLabel);
+            this.Controls.Add(this.ProfileSurnameLabel);
             this.Controls.Add(this.ProfileEmailLabel);
             this.Controls.Add(this.ProfilePicture);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -142,9 +182,12 @@
 
         private System.Windows.Forms.PictureBox ProfilePicture;
         private System.Windows.Forms.Label ProfileEmailLabel;
-        private System.Windows.Forms.Label ProfileAgeLabel;
+        private System.Windows.Forms.Label ProfileSurnameLabel;
         private System.Windows.Forms.Label ProfileNameLabel;
         private System.Windows.Forms.Button ProfileMessageButton;
         private System.Windows.Forms.Button CameraFormExitButton;
+        private System.Windows.Forms.Label ProfileName;
+        private System.Windows.Forms.Label ProfileSurname;
+        private System.Windows.Forms.Label ProfileEmail;
     }
 }
