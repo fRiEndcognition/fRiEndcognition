@@ -180,8 +180,15 @@ class FaceRecognitionController
                 String name;
                 FSDK.GetAllNames(tracker, IDs[i], out name, 65536);
 
-                friendcognition.Profile profile = new friendcognition.Profile(Convert.ToInt32(name));
-                profile.Show();
+                if (name != "")
+                {
+                    friendcognition.Profile profile = new friendcognition.Profile(Convert.ToInt32(name));
+                    profile.Show();
+                }
+                else
+                {
+                    MessageBox.Show("User not registered","",MessageBoxButtons.OK);
+                }
             }
         }
     }
