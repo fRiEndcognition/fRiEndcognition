@@ -52,8 +52,7 @@ namespace friendcognition
             ProfileEmail.Text = Convert.ToString(dt.Rows[0]["Email"]);
             
         }
-
-        private void ProfileAgeLabel_Click(object sender, EventArgs e)
+        private void PictureButton_Click(object sender, EventArgs e)
         {
 
         }
