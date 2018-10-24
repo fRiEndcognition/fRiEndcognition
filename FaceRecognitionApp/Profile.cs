@@ -39,23 +39,32 @@ namespace friendcognition
             }
             this.Close();
         }
-
         private void Profile_Load(object sender, EventArgs e)
         {
-            List<SqlParameter> sqlParams = new List<SqlParameter>();
-            sqlParams.Add(new SqlParameter("Id", id));
-            DataTable dt = DataController.Instance().ExecSP("LoadInfo", sqlParams);
+            DataContextDataContext dt = new DataContextDataContext();
 
-            ProfilePicture.Image = Image.FromStream(new MemoryStream((byte[])dt.Rows[0]["Image"]));
-            ProfileName.Text = Convert.ToString(dt.Rows[0]["Name"]);
-            ProfileSurname.Text = Convert.ToString(dt.Rows[0]["Surname"]);
-            ProfileEmail.Text = Convert.ToString(dt.Rows[0]["Email"]);
-            
+            var image = dt.GetTable<User>().Where(User => User.Id.Equals(id)).Select(User => User.Image.ToArray()).FirstOrDefault();
+            ProfilePicture.Image = Image.FromStream(new MemoryStream(image));
+       
+            ProfileName.Text = dt.GetTable<User>().Where(User => User.Id.Equals(id)).Select(User => User.Name).First().ToString();
+            ProfileSurname.Text = dt.GetTable<User>().Where(User => User.Id.Equals(id)).Select(User => User.Surname).First().ToString();
+            ProfileEmail.Text = dt.GetTable<User>().Where(User => User.Id.Equals(id)).Select(User => User.Email).First().ToString();
         }
-
-        private void ProfileAgeLabel_Click(object sender, EventArgs e)
+        private void PictureButton_Click(object sender, EventArgs e)
         {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "jpeg files (*.jpg)|*.jpg|png files (*.png)|*.png";
 
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var img = Bitmap.FromStream(fileDialog.OpenFile());
+
+                List<SqlParameter> sqlParams = new List<SqlParameter>();
+                sqlParams.Add(new SqlParameter("Image", DataController.Instance().ConvertImageToByteArray(img)));
+                sqlParams.Add(new SqlParameter("Id", id));
+                DataController.Instance().ExecSP("StoreImage", sqlParams);
+                ProfilePicture.Image = img;
+            }
         }
     }
 }

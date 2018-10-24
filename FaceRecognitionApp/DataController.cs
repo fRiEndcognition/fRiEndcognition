@@ -21,7 +21,7 @@ class DataController
 
     private string trackerFile = "tracker.dat";
 
-    private int id;
+    private int UserId, TemporaryId;
 
     public static DataController Instance()
     {
@@ -66,12 +66,22 @@ class DataController
 
     public int getId()
     {
-        return id;
+        return UserId;
     }
 
     public void setId(int id)
     {
-        this.id = id;
+        UserId = id;
+    }
+
+    public int getTemporaryId()
+    {
+        return TemporaryId;
+    }
+
+    public void setTemporaryId(int id)
+    {
+        TemporaryId = id;
     }
 
     public byte[] ConvertImageToByteArray(Image image)
