@@ -45,6 +45,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +59,11 @@
   <ItemGroup>
     <Compile Include="CameraController.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="DataContext.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataContext.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DataController.cs" />
     <Compile Include="FaceRecognitionController.cs" />
     <Compile Include="LOGIN.cs">
@@ -126,6 +132,14 @@
     <EmbeddedResource Include="RegisterCamera.resx">
       <DependentUpon>RegisterCamera.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataContext.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataContext.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataContext.dbml.layout">
+      <DependentUpon>DataContext.dbml</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -186,6 +200,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\if_profile-alt-4_299106.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

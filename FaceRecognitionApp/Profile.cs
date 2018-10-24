@@ -42,14 +42,24 @@ namespace friendcognition
 
         private void Profile_Load(object sender, EventArgs e)
         {
-            List<SqlParameter> sqlParams = new List<SqlParameter>();
-            sqlParams.Add(new SqlParameter("Id", id));
-            DataTable dt = DataController.Instance().ExecSP("LoadInfo", sqlParams);
+            DataContextDataContext dt = new DataContextDataContext();
 
-            ProfilePicture.Image = Image.FromStream(new MemoryStream((byte[])dt.Rows[0]["Image"]));
-            ProfileName.Text = Convert.ToString(dt.Rows[0]["Name"]);
-            ProfileSurname.Text = Convert.ToString(dt.Rows[0]["Surname"]);
-            ProfileEmail.Text = Convert.ToString(dt.Rows[0]["Email"]);
+           // var Image = from User in dt.GetTable<User>()
+                     //  where User.Id == id
+                     //  select User.Image.FromStream(new MemoryStream(User.toArray()));
+           // ProfilePicture.Image = Image;
+            var Name = from User in dt.GetTable<User>()
+                       where User.Id == id
+                       select User.Name;
+            ProfileName.Text = Name.ToString();
+            var Surname = from User in dt.GetTable<User>()
+                       where User.Id == id
+                       select User.Surname;
+            ProfileSurname.Text = Surname.ToString();
+            var Email = from User in dt.GetTable<User>()
+                       where User.Id == id
+                       select User.Email;
+            ProfileEmail.Text = Email.ToString();
             
         }
         private void PictureButton_Click(object sender, EventArgs e)
