@@ -15,6 +15,7 @@ namespace friendcognition
     public partial class Profile : Form
     {
         private int id = 0;
+        bool anotherUser = false;
 
         public Profile()
         {
@@ -25,14 +26,18 @@ namespace friendcognition
         public Profile(int id)
         {
             this.id = id;
+            anotherUser = true;
             InitializeComponent();
         }
 
         private void CameraFormExitButton_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
+            if (anotherUser == false)
+            {
+                Menu menu = new Menu();
+                menu.Show();
+            }
             this.Close();
-            menu.Show();
         }
 
         private void Profile_Load(object sender, EventArgs e)

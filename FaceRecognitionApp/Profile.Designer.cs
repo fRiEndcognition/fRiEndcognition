@@ -118,7 +118,7 @@
             this.ProfilePicture.Location = new System.Drawing.Point(60, 60);
             this.ProfilePicture.Name = "ProfilePicture";
             this.ProfilePicture.Size = new System.Drawing.Size(130, 132);
-            this.ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ProfilePicture.TabIndex = 0;
             this.ProfilePicture.TabStop = false;
             // 
